@@ -1,0 +1,26 @@
+{
+  "consent": {
+    "required": "Active consent is required to access this service.",
+    "scopeMissing": "Permission to access this data scope was not granted in your active consent.",
+    "revoked": "You withdrew permission. No source system was contacted.",
+    "expired": "Consent validity has expired. Please grant consent again to continue."
+  },
+  "identity": {
+    "demoFarmerNotFound": "Synthetic Farmer ID was not found in the demo allowlist.",
+    "invalidPin": "Invalid demo PIN. Use the demo PIN 2468 for testing.",
+    "rateLimitExceeded": "Too many failed attempts. Please wait 60 seconds."
+  },
+  "applications": {
+    "idempotencyConflict": "Idempotency key was reused with a different request payload."
+  },
+  "dashboard": {
+    "unavailable": "All agricultural data sources are currently unavailable."
+  },
+  "common": {
+    "validationError": "Request validation failed. Please check the input parameters.",
+    "internalError": "An unexpected internal error occurred."
+  },
+  "sources": {
+    "temporarilyUnavailable": "A simulated data source is temporarily unavailable."
+  }
+}

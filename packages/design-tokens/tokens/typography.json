@@ -1,0 +1,28 @@
+{
+  "fonts": {
+    "latin": "\"Noto Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+    "devanagari": "\"Noto Sans Devanagari\", \"Noto Sans\", system-ui, sans-serif",
+    "kannada": "\"Noto Sans Kannada\", \"Noto Sans\", system-ui, sans-serif"
+  },
+  "sizes": {
+    "xs": "0.75rem",
+    "sm": "0.875rem",
+    "md": "1rem",
+    "lg": "1.125rem",
+    "xl": "1.375rem",
+    "2xl": "1.75rem"
+  },
+  "lineHeights": {
+    "xs": "1.125rem",
+    "sm": "1.3125rem",
+    "md": "1.5rem",
+    "lg": "1.6875rem",
+    "xl": "2rem",
+    "2xl": "2.5rem"
+  },
+  "weights": {
+    "regular": 400,
+    "semibold": 600,
+    "bold": 700
+  }
+}

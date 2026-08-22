@@ -1,0 +1,18 @@
+{
+  "name": "@krishisetu/worker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Async jobs, outbox, and event composition shell for KrishiSetu",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@krishisetu/core": "*",
+    "@krishisetu/config": "*",
+    "@krishisetu/observability": "*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}

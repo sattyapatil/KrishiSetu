@@ -1,0 +1,19 @@
+{
+  "name": "@krishisetu/land-records",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Land records bounded context for parcels, ULPIN, and joint ownership share allocation",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@krishisetu/core": "*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}

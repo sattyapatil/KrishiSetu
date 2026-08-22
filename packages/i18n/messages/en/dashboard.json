@@ -1,0 +1,13 @@
+{
+  "title": "Unified Agricultural Dashboard",
+  "subtitle": "Single-window view of your linked land, crops, benefits, and pre-qualified credit",
+  "overallStatus": "Source Integration Status",
+  "partialSourceNotice": "Some simulated sources took longer to respond. You can refresh them individually.",
+  "landSummary": "Cultivable Land",
+  "cropsSummary": "Recorded Crops",
+  "bankSummary": "Direct Benefit Bank Linkage",
+  "schemesSummary": "Eligible Government Subsidies",
+  "creditSummary": "Pre-qualified Kisan Credit",
+  "applySelected": "Review & Apply Selected",
+  "selectOfferings": "Select one or more programs to bundle into an application"
+}

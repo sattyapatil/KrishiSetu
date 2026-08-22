@@ -1,0 +1,16 @@
+{
+  "cardTitle": "Linked Cultivable Land",
+  "eyebrow": "My Land",
+  "totalArea": "Total Cultivable Share",
+  "summary": "Your verified share across linked land parcels",
+  "surveyNumber": "Survey / Gut No.",
+  "ulpin": "ULPIN",
+  "village": "Village",
+  "occupantClass": "Occupant Class",
+  "ownership": "Ownership Share",
+  "allocatedShare": "Allocated Cultivable Area",
+  "encumbrance": "Encumbrance / Existing Loan",
+  "encumbrancePresent": "Active Bank Encumbrance",
+  "noEncumbrance": "No Encumbrance Recorded",
+  "sourceMahabhumi": "Mock Mahabhumi (7/12 Record)"
+}

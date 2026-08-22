@@ -1,0 +1,16 @@
+{
+  "cardTitle": "Eligible Government Subsidies",
+  "eyebrow": "Government Subsidies",
+  "summary": "Evaluated against verified land, active crops, and ownership share",
+  "estimatedBenefit": "Estimated Subsidy Benefit",
+  "dripTitle": "MahaDBT Micro-Irrigation (Drip Subsidy)",
+  "dripDesc": "Capital subsidy for automated drip irrigation installation on cultivable land",
+  "rotavatorTitle": "SMAM Agricultural Mechanization (Rotavator)",
+  "rotavatorDesc": "Machinery subsidy on tractor-mounted rotary tiller equipment",
+  "likelyEligible": "Likely Eligible",
+  "needsReview": "Co-owner Review Needed",
+  "reasonCultivableShare": "Verified cultivable land parcel linked",
+  "reasonActiveCrop": "Active Kharif crop survey recorded",
+  "reasonNoDuplicate": "No active conflicting subsidy application",
+  "sourceMahadbt": "Mock MahaDBT"
+}

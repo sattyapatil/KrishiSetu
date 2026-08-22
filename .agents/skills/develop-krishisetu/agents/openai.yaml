@@ -1,0 +1,4 @@
+interface:
+  display_name: "Develop KrishiSetu"
+  short_description: "Build KrishiSetu within its architecture rules"
+  default_prompt: "Use $develop-krishisetu to implement the next approved KrishiSetu phase without violating module, localization, security, or mock-data boundaries."

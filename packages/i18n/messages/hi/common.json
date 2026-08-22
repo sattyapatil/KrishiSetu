@@ -1,0 +1,22 @@
+{
+  "applyNow": "अभी आवेदन करें",
+  "continue": "आगे बढ़ें",
+  "back": "पीछे",
+  "cancel": "रद्द करें",
+  "save": "सहेजें",
+  "retry": "पुनः प्रयास करें",
+  "refresh": "ताज़ा करें",
+  "loading": "लोड हो रहा है...",
+  "ready": "तैयार",
+  "needsAction": "कार्रवाई आवश्यक",
+  "unavailable": "अनुपलब्ध",
+  "mockResult": "मॉक परिणाम",
+  "showDetails": "विवरण देखें",
+  "hideDetails": "विवरण छिपाएं",
+  "source": "स्रोत",
+  "status": "स्थिति",
+  "technicalDetails": "तकनीकी विवरण",
+  "verified": "सत्यापित",
+  "hectares": "हेक्टेयर",
+  "rupees": "₹"
+}

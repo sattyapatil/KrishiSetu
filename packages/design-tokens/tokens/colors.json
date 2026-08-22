@@ -1,0 +1,21 @@
+{
+  "civic-blue": "#1e3a8a",
+  "civic-blue-dark": "#172554",
+  "civic-blue-light": "#dbeafe",
+  "agri-green": "#166534",
+  "agri-green-dark": "#14532d",
+  "surface-page": "#f8fafc",
+  "surface-card": "#ffffff",
+  "text": "#0f172a",
+  "text-muted": "#475569",
+  "border": "#cbd5e1",
+  "error": "#dc2626",
+  "error-dark": "#991b1b",
+  "error-surface": "#fef2f2",
+  "success": "#15803d",
+  "success-dark": "#166534",
+  "success-surface": "#f0fdf4",
+  "warning-surface": "#fef3c7",
+  "warning-text": "#78350f",
+  "focus": "#0f172a"
+}

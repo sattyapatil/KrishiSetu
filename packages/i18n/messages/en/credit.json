@@ -1,0 +1,15 @@
+{
+  "cardTitle": "Kisan Credit Card (KCC) Crop Loan",
+  "eyebrow": "Pre-qualified Credit",
+  "summary": "Indicative crop loan limit based on verified crop scale of finance & cultivable area",
+  "estimatedLimit": "Indicative Year-1 Credit Limit",
+  "prequalifiedMock": "Pre-qualified (Simulated)",
+  "interestSubvention": "4.00% p.a. (with prompt repayment incentive subvention)",
+  "mockEstimateOnly": "Illustrative estimate based on standard district scale of finance. Final sanction requires lending bank approval.",
+  "baseCropCost": "Base Crop Cultivation Cost",
+  "postHarvestHousehold": "Post-harvest / Household Expenses (10%)",
+  "assetMaintenance": "Farm Asset Maintenance (20%)",
+  "bankReadiness": "Direct Benefit Bank Account",
+  "bankReady": "Ready for Direct Transfer",
+  "sourceUli": "Mock ULI (Unified Lending Interface)"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Multi-Scheme Application Bundle",
+  "subtitle": "Single-window unified submission for agricultural subsidies and Kisan Credit Card",
+  "reviewTitle": "Review Shared Agricultural Information",
+  "bundleId": "Application Bundle ID",
+  "submittedAt": "Submitted At",
+  "statusCompleted": "Applications Accepted (Simulated)",
+  "statusPartial": "Partially Accepted (Retry Available)",
+  "statusFailed": "Submission Failed (Retry Available)",
+  "childMahaDbtTitle": "MahaDBT Micro-Irrigation Application",
+  "childUliTitle": "ULI Kisan Credit Card Pre-application",
+  "providerReceipt": "Simulated Provider Reference No.",
+  "nextSteps": "Next Steps",
+  "retryFailed": "Retry Failed Submissions",
+  "declarationReview": "I confirm that the pre-filled land and crop information accurately represents my agricultural holding.",
+  "declarationPrototype": "I understand that KrishiSetu is a demonstration prototype and submissions generate simulated receipts."
+}

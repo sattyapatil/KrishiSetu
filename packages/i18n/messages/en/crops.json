@@ -1,0 +1,15 @@
+{
+  "cardTitle": "Verified Crop Sown Records",
+  "eyebrow": "Crop Survey",
+  "season": "Season",
+  "year": "Year",
+  "summary": "Recorded seasonal crops under e-Pik Pahani / Crop Sown Registry",
+  "cropName": "Crop Name",
+  "sownArea": "Sown Area",
+  "verification": "Verification Status",
+  "soybean": "Soybean",
+  "pigeonPea": "Pigeon Pea (Tur)",
+  "cotton": "Cotton",
+  "sugarcane": "Sugarcane",
+  "sourceCropRegistry": "Mock Crop Sown Registry (e-Pik)"
+}

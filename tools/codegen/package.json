@@ -1,0 +1,13 @@
+{
+  "name": "@krishisetu/codegen",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Single-source-of-truth code generators and drift checkers for KrishiSetu",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}

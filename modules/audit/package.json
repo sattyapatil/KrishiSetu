@@ -1,0 +1,19 @@
+{
+  "name": "@krishisetu/audit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Audit bounded context for immutable sanitized audit events and tombstones",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@krishisetu/core": "*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}

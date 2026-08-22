@@ -1,0 +1,22 @@
+{
+  "applyNow": "Apply Now",
+  "continue": "Continue",
+  "back": "Back",
+  "cancel": "Cancel",
+  "save": "Save",
+  "retry": "Retry",
+  "refresh": "Refresh",
+  "loading": "Loading...",
+  "ready": "Ready",
+  "needsAction": "Needs Action",
+  "unavailable": "Unavailable",
+  "mockResult": "Mock Result",
+  "showDetails": "Show details",
+  "hideDetails": "Hide details",
+  "source": "Source",
+  "status": "Status",
+  "technicalDetails": "Technical Details",
+  "verified": "Verified",
+  "hectares": "hectares",
+  "rupees": "₹"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@krishisetu/identity",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Identity bounded context for synthetic Farmer ID login and session lifecycle",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@krishisetu/core": "*",
+    "@krishisetu/contracts": "*",
+    "@krishisetu/config": "*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}

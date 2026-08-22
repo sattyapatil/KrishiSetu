@@ -1,0 +1,16 @@
+{
+  "cardTitle": "जोडलेली लागवडीयोग्य जमीन",
+  "eyebrow": "माझी जमीन",
+  "totalArea": "एकूण लागवडीयोग्य हिस्सा",
+  "summary": "जोडलेल्या भूखंडांवर आपला पडताळलेला हिस्सा",
+  "surveyNumber": "सर्व्हे / गट क्रमांक",
+  "ulpin": "युलपिन (ULPIN)",
+  "village": "गाव",
+  "occupantClass": "भोगवटादार वर्ग",
+  "ownership": "मालकी हिस्सा",
+  "allocatedShare": "वाटप केलेले लागवडीयोग्य क्षेत्र",
+  "encumbrance": "बोजा / विद्यमान कर्ज",
+  "encumbrancePresent": "सक्रिय बँक बोजा",
+  "noEncumbrance": "कोणताही बोजा नोंदवलेला नाही",
+  "sourceMahabhumi": "मॉक महाभूमी (७/१२ उतारा)"
+}

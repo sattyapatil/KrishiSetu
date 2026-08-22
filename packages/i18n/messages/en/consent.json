@@ -1,0 +1,47 @@
+{
+  "title": "Data Sharing Permission",
+  "subtitle": "Explicit consent for unified agricultural verification and pre-qualification",
+  "purposeTitle": "Multi-Scheme Agricultural Verification & Pre-qualification",
+  "purposeDesc": "Allows KrishiSetu to fetch land, crop, and bank readiness from simulated registries to evaluate subsidy eligibility and Kisan Credit limits.",
+  "scopesTitle": "Requested Information Permissions",
+  "validityNotice": "Valid for 30 minutes. You can withdraw permission and delete temporary cached records at any time.",
+  "grantConsent": "Grant Consent & Proceed",
+  "denyConsent": "Continue without Sharing",
+  "consentRevoked": "Consent has been withdrawn. No source system was contacted.",
+  "withdrawalReceipt": "Consent Withdrawal & Purge Receipt",
+  "withdrawalDetails": "All temporary dashboard caches and unsubmitted application snapshots have been purged.",
+  "scopes": {
+    "identityRead": {
+      "label": "Farmer Identity",
+      "description": "Verification of your name and linked agricultural registry profile."
+    },
+    "landRead": {
+      "label": "Land Holdings",
+      "description": "Cultivable area, plot survey numbers, and allocated joint ownership share."
+    },
+    "cropRead": {
+      "label": "Crop Survey",
+      "description": "Current Kharif/Rabi seasonal crop sown verification records."
+    },
+    "bankStatusRead": {
+      "label": "Bank Readiness",
+      "description": "Masked account readiness and direct benefit transfer mapping."
+    },
+    "subsidyEligibilityRead": {
+      "label": "Subsidy Eligibility",
+      "description": "Automated deterministic evaluation for drip irrigation and farm machinery."
+    },
+    "creditRead": {
+      "label": "Credit Limit Estimate",
+      "description": "Calculation of indicative Kisan Credit Card crop loan scale of finance."
+    },
+    "subsidyApply": {
+      "label": "Subsidy Application",
+      "description": "Permission to dispatch application to simulated MahaDBT."
+    },
+    "creditPreapply": {
+      "label": "Credit Pre-application",
+      "description": "Permission to dispatch pre-application to simulated ULI."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@krishisetu/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dashboard bounded context for read-only multi-source fan-out query composition",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@krishisetu/core": "*",
+    "@krishisetu/farmer-profile": "*",
+    "@krishisetu/land-records": "*",
+    "@krishisetu/crop-registry": "*",
+    "@krishisetu/schemes": "*",
+    "@krishisetu/credit": "*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module"
+}

@@ -1,0 +1,411 @@
+/* KrishiSetu core tokens and reference components.
+ * UX4G/GIGW-aligned design baseline; formal conformity requires testing/audit.
+ * State Emblem assets are intentionally not included.
+ */
+
+:root {
+  color-scheme: light;
+
+  --ks-font-latin: "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ks-font-devanagari: "Noto Sans Devanagari", "Noto Sans", system-ui, sans-serif;
+  --ks-font-kannada: "Noto Sans Kannada", "Noto Sans", system-ui, sans-serif;
+
+  --ks-color-civic-blue: #1e3a8a;
+  --ks-color-civic-blue-dark: #172554;
+  --ks-color-civic-blue-light: #dbeafe;
+  --ks-color-agri-green: #166534;
+  --ks-color-agri-green-dark: #14532d;
+  --ks-color-surface-page: #f8fafc;
+  --ks-color-surface-card: #ffffff;
+  --ks-color-text: #0f172a;
+  --ks-color-text-muted: #475569;
+  --ks-color-border: #cbd5e1;
+  --ks-color-error: #dc2626;
+  --ks-color-error-dark: #991b1b;
+  --ks-color-error-surface: #fef2f2;
+  --ks-color-success: #15803d;
+  --ks-color-success-dark: #166534;
+  --ks-color-success-surface: #f0fdf4;
+  --ks-color-warning-surface: #fef3c7;
+  --ks-color-warning-text: #78350f;
+  --ks-color-focus: #0f172a;
+
+  --ks-font-size-xs: 0.75rem;
+  --ks-font-size-sm: 0.875rem;
+  --ks-font-size-md: 1rem;
+  --ks-font-size-lg: 1.125rem;
+  --ks-font-size-xl: 1.375rem;
+  --ks-font-size-2xl: 1.75rem;
+  --ks-line-height-xs: 1.125rem;
+  --ks-line-height-sm: 1.3125rem;
+  --ks-line-height-md: 1.5rem;
+  --ks-line-height-lg: 1.6875rem;
+  --ks-line-height-xl: 2rem;
+  --ks-line-height-2xl: 2.5rem;
+  --ks-font-weight-regular: 400;
+  --ks-font-weight-semibold: 600;
+  --ks-font-weight-bold: 700;
+
+  --ks-space-1: 0.25rem;
+  --ks-space-2: 0.5rem;
+  --ks-space-3: 0.75rem;
+  --ks-space-4: 1rem;
+  --ks-space-5: 1.25rem;
+  --ks-space-6: 1.5rem;
+  --ks-space-8: 2rem;
+  --ks-space-10: 2.5rem;
+  --ks-space-12: 3rem;
+
+  --ks-radius-sm: 0.25rem;
+  --ks-radius-md: 0.5rem;
+  --ks-radius-lg: 0.75rem;
+  --ks-border-width: 1px;
+  --ks-border-width-strong: 2px;
+  --ks-touch-min: 2.75rem;
+  --ks-touch-comfortable: 3rem;
+  --ks-control-height: 3rem;
+  --ks-content-max: 75rem;
+  --ks-shadow-card: 0 1px 2px rgb(15 23 42 / 0.08);
+  --ks-focus-outline: 3px solid var(--ks-color-focus);
+  --ks-focus-offset: 3px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--ks-font-latin);
+  font-size: 100%;
+  line-height: 1.5;
+  text-size-adjust: 100%;
+}
+
+html:lang(mr),
+html:lang(hi),
+html:lang(sa),
+:lang(mr),
+:lang(hi),
+:lang(sa),
+:lang(mr-Deva),
+:lang(hi-Deva),
+:lang(sa-Deva) {
+  font-family: var(--ks-font-devanagari);
+}
+
+html:lang(kn),
+:lang(kn),
+:lang(kn-Knda) {
+  font-family: var(--ks-font-kannada);
+}
+
+body {
+  margin: 0;
+  color: var(--ks-color-text);
+  background: var(--ks-color-surface-page);
+  font-size: var(--ks-font-size-md);
+  line-height: var(--ks-line-height-md);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-block-start: 0;
+}
+
+h1 {
+  margin-block-end: var(--ks-space-6);
+  font-size: var(--ks-font-size-2xl);
+  line-height: var(--ks-line-height-2xl);
+  font-weight: var(--ks-font-weight-bold);
+}
+
+h2 {
+  margin-block-end: var(--ks-space-4);
+  font-size: var(--ks-font-size-xl);
+  line-height: var(--ks-line-height-xl);
+  font-weight: var(--ks-font-weight-bold);
+}
+
+h3 {
+  margin-block-end: var(--ks-space-3);
+  font-size: var(--ks-font-size-lg);
+  line-height: var(--ks-line-height-lg);
+  font-weight: var(--ks-font-weight-bold);
+}
+
+.ks-prototype-notice {
+  display: flex;
+  align-items: center;
+  min-block-size: 2rem;
+  padding: 0.4375rem var(--ks-space-4);
+  color: var(--ks-color-warning-text);
+  background: var(--ks-color-warning-surface);
+  font-size: var(--ks-font-size-xs);
+  line-height: var(--ks-line-height-xs);
+  font-weight: var(--ks-font-weight-semibold);
+}
+
+.ks-header-brand-row {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  column-gap: var(--ks-space-3);
+  align-items: center;
+  min-block-size: 4.5rem;
+  padding: var(--ks-space-3) var(--ks-space-4);
+  background: var(--ks-color-surface-card);
+  border-block-end: var(--ks-border-width) solid var(--ks-color-border);
+}
+
+.ks-header-authority-slot {
+  inline-size: 3rem;
+  block-size: 3rem;
+}
+
+.ks-brand-lockup {
+  min-inline-size: 0;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+.ks-brand-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--ks-space-2);
+}
+
+.ks-brand-title {
+  color: var(--ks-color-civic-blue);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: var(--ks-font-weight-bold);
+}
+
+.ks-brand-mark {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  flex: 0 0 auto;
+}
+
+.ks-brand-motto {
+  margin-block-start: 0.125rem;
+  color: var(--ks-color-text-muted);
+  font-family: var(--ks-font-devanagari);
+  font-size: var(--ks-font-size-xs);
+  line-height: var(--ks-line-height-xs);
+  font-weight: var(--ks-font-weight-regular);
+}
+
+.ks-button {
+  min-inline-size: var(--ks-touch-min);
+  min-block-size: var(--ks-touch-comfortable);
+  padding: var(--ks-space-3) var(--ks-space-5);
+  border: var(--ks-border-width-strong) solid transparent;
+  border-radius: var(--ks-radius-md);
+  font-family: inherit;
+  font-size: var(--ks-font-size-md);
+  line-height: var(--ks-line-height-md);
+  font-weight: var(--ks-font-weight-bold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ks-space-2);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ks-button--primary {
+  color: #ffffff;
+  background: var(--ks-color-agri-green);
+  border-color: var(--ks-color-agri-green);
+}
+
+.ks-button--primary:hover {
+  background: var(--ks-color-agri-green-dark);
+  border-color: var(--ks-color-agri-green-dark);
+}
+
+.ks-button--primary:active {
+  background: #052e16;
+  border-color: #052e16;
+}
+
+.ks-button--secondary {
+  padding: 0.625rem 1.125rem;
+  color: var(--ks-color-civic-blue);
+  background: var(--ks-color-surface-card);
+  border-color: var(--ks-color-civic-blue);
+}
+
+.ks-button--secondary:hover {
+  color: var(--ks-color-civic-blue-dark);
+  background: #eff6ff;
+  border-color: var(--ks-color-civic-blue-dark);
+}
+
+.ks-button--secondary:active {
+  color: #ffffff;
+  background: var(--ks-color-civic-blue-dark);
+}
+
+.ks-button:focus-visible,
+.ks-disclosure:focus-visible,
+.ks-link:focus-visible,
+.ks-brand-lockup:focus-visible {
+  outline: var(--ks-focus-outline);
+  outline-offset: var(--ks-focus-offset);
+}
+
+.ks-button:disabled,
+.ks-button[aria-disabled="true"] {
+  color: var(--ks-color-text-muted);
+  background: #e2e8f0;
+  border-color: var(--ks-color-border);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.ks-data-card {
+  overflow: hidden;
+  padding: var(--ks-space-4);
+  background: var(--ks-color-surface-card);
+  border: var(--ks-border-width) solid var(--ks-color-border);
+  border-radius: var(--ks-radius-lg);
+  box-shadow: var(--ks-shadow-card);
+}
+
+.ks-data-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ks-space-3);
+}
+
+.ks-data-card__eyebrow {
+  margin-block-end: var(--ks-space-1);
+  color: var(--ks-color-civic-blue);
+  font-size: var(--ks-font-size-xs);
+  line-height: var(--ks-line-height-xs);
+  font-weight: var(--ks-font-weight-bold);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+:lang(mr) .ks-data-card__eyebrow,
+:lang(sa) .ks-data-card__eyebrow {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.ks-data-card__title {
+  margin: 0;
+  font-size: var(--ks-font-size-lg);
+  line-height: var(--ks-line-height-lg);
+  font-weight: var(--ks-font-weight-bold);
+}
+
+.ks-data-card__value {
+  margin-block: var(--ks-space-4) 0;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: var(--ks-font-weight-bold);
+}
+
+.ks-data-card__value > span {
+  font-size: var(--ks-font-size-md);
+  line-height: var(--ks-line-height-md);
+}
+
+.ks-data-card__summary {
+  margin-block: var(--ks-space-1) var(--ks-space-3);
+  color: var(--ks-color-text);
+}
+
+.ks-disclosure {
+  inline-size: 100%;
+  min-block-size: var(--ks-touch-comfortable);
+  padding: var(--ks-space-2) var(--ks-space-3);
+  color: var(--ks-color-civic-blue);
+  background: transparent;
+  border: 0;
+  border-radius: var(--ks-radius-sm);
+  font-family: inherit;
+  font-size: var(--ks-font-size-md);
+  line-height: var(--ks-line-height-md);
+  font-weight: var(--ks-font-weight-bold);
+  text-align: start;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ks-data-card__details {
+  margin: var(--ks-space-3) calc(-1 * var(--ks-space-4)) calc(-1 * var(--ks-space-4));
+  padding: var(--ks-space-4);
+  background: var(--ks-color-surface-page);
+  border-block-start: var(--ks-border-width) solid var(--ks-color-border);
+}
+
+.ks-status {
+  min-block-size: 1.75rem;
+  padding: 0.25rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ks-space-1);
+  border: var(--ks-border-width) solid currentColor;
+  border-radius: 999px;
+  font-size: var(--ks-font-size-xs);
+  line-height: var(--ks-line-height-xs);
+  font-weight: var(--ks-font-weight-bold);
+  white-space: nowrap;
+}
+
+.ks-status[data-status="success"] {
+  color: var(--ks-color-success-dark);
+  background: var(--ks-color-success-surface);
+  border-color: #86efac;
+}
+
+.ks-status[data-status="error"] {
+  color: var(--ks-color-error-dark);
+  background: var(--ks-color-error-surface);
+  border-color: #fecaca;
+}
+
+@media (min-width: 48rem) {
+  .ks-data-card {
+    padding: var(--ks-space-5);
+  }
+
+  .ks-data-card__details {
+    margin-inline: calc(-1 * var(--ks-space-5));
+    margin-block-end: calc(-1 * var(--ks-space-5));
+    padding: var(--ks-space-5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .ks-button,
+  .ks-data-card,
+  .ks-status {
+    forced-color-adjust: auto;
+  }
+}
