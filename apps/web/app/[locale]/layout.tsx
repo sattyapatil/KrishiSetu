@@ -1,6 +1,8 @@
 import React from 'react';
 import { SUPPORTED_LOCALES, Locale, isSupportedLocale, localeRegistry } from '@krishisetu/i18n';
 import { notFound } from 'next/navigation';
+import { AppShell } from '../../src/composition/AppShell.js';
+import { JourneyProvider } from '../../src/features/journey/journey-context.js';
 
 export function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }));
@@ -23,8 +25,16 @@ export default async function LocaleLayout({
   const localeMeta = localeRegistry.supported[typedLocale];
 
   return (
-    <div lang={localeMeta.htmlLang} dir={localeMeta.direction} className={`ks-locale-root ks-locale-${typedLocale}`}>
-      {children}
+    <div
+      lang={localeMeta.htmlLang}
+      dir={localeMeta.direction}
+      className={`ks-locale-root ks-locale-${typedLocale}`}
+    >
+      <JourneyProvider>
+        <AppShell locale={typedLocale}>
+          {children}
+        </AppShell>
+      </JourneyProvider>
     </div>
   );
 }

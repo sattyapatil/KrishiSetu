@@ -1,6 +1,6 @@
 {
   "applyNow": "आता अर्ज करा",
-  "continue": "पुढे जा",
+  "continue": "पुढे सुरू ठेवा",
   "back": "मागे",
   "cancel": "रद्द करा",
   "save": "जतन करा",
@@ -16,7 +16,16 @@
   "source": "स्रोत",
   "status": "स्थिती",
   "technicalDetails": "तांत्रिक तपशील",
-  "verified": "पडताळणी पूर्ण",
+  "verified": "पडताळणी झाली",
   "hectares": "हेक्टर",
-  "rupees": "₹"
+  "rupees": "₹",
+  "accessRequiredTitle": "डेमो प्रवेश आवश्यक",
+  "accessRequiredDescription": "या पृष्ठावर प्रवेश करण्यासाठी कृपया साइन इन करा किंवा प्रोटोटाइप डेमो सुरू करा.",
+  "startDemo": "प्रोटोटाइप डेमो सुरू करा",
+  "notFoundTitle": "पृष्ठ किंवा नोंद आढळली नाही",
+  "notFoundDescription": "विनंती केलेले पृष्ठ किंवा प्रोटोटाइप फिक्स्चर नोंद अस्तित्वात नाही.",
+  "returnHome": "डॅशबोर्डवर परत जा",
+  "prototypeBadge": "प्रोटोटाइप",
+  "syntheticProvenance": "सिंथेटिक मॉक डेटा",
+  "close": "बंद करा"
 }

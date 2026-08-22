@@ -18,5 +18,14 @@
   "technicalDetails": "Technical Details",
   "verified": "Verified",
   "hectares": "hectares",
-  "rupees": "₹"
+  "rupees": "₹",
+  "accessRequiredTitle": "Demo Access Required",
+  "accessRequiredDescription": "Please sign in or start the prototype demo to access this page.",
+  "startDemo": "Start Prototype Demo",
+  "notFoundTitle": "Page or Record Not Found",
+  "notFoundDescription": "The requested page or prototype fixture record does not exist.",
+  "returnHome": "Return to Dashboard",
+  "prototypeBadge": "PROTOTYPE",
+  "syntheticProvenance": "Synthetic Mock Data",
+  "close": "Close"
 }

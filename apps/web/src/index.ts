@@ -1,10 +1,13 @@
 export * from './composition/AppShell.js';
+export * from './components/icons.js';
+export * from './components/AccessRequiredView.js';
+export * from './components/NotFoundView.js';
 export * from './features/identity/LoginView.js';
 export * from './features/consent/ConsentView.js';
+export * from './features/journey/index.js';
 export * from './features/dashboard/index.js';
-export * from './features/applications/ApplicationsView.js';
-export * from './features/privacy/PrivacyView.js';
+export * from './features/schemes/index.js';
+export * from './features/applications/index.js';
+export * from './features/privacy/index.js';
 export * from './features/notifications/index.js';
 export * from './features/weather-advisory/index.js';
-
-

@@ -16,8 +16,12 @@
   "effectiveFrom": "प्रकाशित: {from}",
   "sourcePrefix": "स्रोत: {source}",
   "corrigendumNotice": "सूचना #{id} का शुद्धिपत्र",
-  "prototypeBadge": "काल्पनिक सार्वजनिक सूचना",
+  "prototypeBadge": "सिंथेटिक सार्वजनिक सूचना",
   "close": "सूचना केंद्र बंद करें",
+  "noticeDetailTitle": "सार्वजनिक सूचना विवरण",
+  "backToNotices": "सूचना केंद्र पर वापस जाएं",
+  "publishedAt": "प्रकाशन तिथि",
+  "validUntil": "तक वैध",
   "forms": {
     "selfDeclaration": "किसान भूमि एवं फसल स्व-घोषणा पत्र"
   },

@@ -1,6 +1,6 @@
 {
   "applyNow": "अभी आवेदन करें",
-  "continue": "आगे बढ़ें",
+  "continue": "जारी रखें",
   "back": "पीछे",
   "cancel": "रद्द करें",
   "save": "सहेजें",
@@ -11,12 +11,21 @@
   "needsAction": "कार्रवाई आवश्यक",
   "unavailable": "अनुपलब्ध",
   "mockResult": "मॉक परिणाम",
-  "showDetails": "विवरण देखें",
+  "showDetails": "विवरण दिखाएं",
   "hideDetails": "विवरण छिपाएं",
   "source": "स्रोत",
   "status": "स्थिति",
   "technicalDetails": "तकनीकी विवरण",
   "verified": "सत्यापित",
   "hectares": "हेक्टेयर",
-  "rupees": "₹"
+  "rupees": "₹",
+  "accessRequiredTitle": "डेमो पहुंच आवश्यक",
+  "accessRequiredDescription": "इस पृष्ठ तक पहुंचने के लिए कृपया साइन इन करें या प्रोटोटाइप डेमो शुरू करें।",
+  "startDemo": "प्रोटोटाइप डेमो शुरू करें",
+  "notFoundTitle": "पृष्ठ या रिकॉर्ड नहीं मिला",
+  "notFoundDescription": "अनुरोधित पृष्ठ या प्रोटोटाइप फिक्स्चर रिकॉर्ड मौजूद नहीं है।",
+  "returnHome": "डैशबोर्ड पर वापस जाएं",
+  "prototypeBadge": "प्रोटोटाइप",
+  "syntheticProvenance": "सिंथेटिक मॉक डेटा",
+  "close": "बंद करें"
 }

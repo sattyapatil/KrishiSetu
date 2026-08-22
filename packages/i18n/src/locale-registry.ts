@@ -53,6 +53,7 @@ export const localeRegistry = {
 
 export type Locale = keyof typeof localeRegistry.supported;
 export const SUPPORTED_LOCALES = Object.keys(localeRegistry.supported) as readonly Locale[];
+export const DEFAULT_LOCALE: Locale = localeRegistry.defaultLocale;
 
 export function isSupportedLocale(locale: string): locale is Locale {
   return Object.prototype.hasOwnProperty.call(localeRegistry.supported, locale);

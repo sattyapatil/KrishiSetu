@@ -18,6 +18,10 @@
   "corrigendumNotice": "Corrigendum to notice #{id}",
   "prototypeBadge": "Synthetic Public Notice",
   "close": "Close Notification Centre",
+  "noticeDetailTitle": "Public Notice Details",
+  "backToNotices": "Back to Notification Centre",
+  "publishedAt": "Published On",
+  "validUntil": "Valid Until",
   "forms": {
     "selfDeclaration": "Farmer Land & Crop Self-Declaration Form"
   },

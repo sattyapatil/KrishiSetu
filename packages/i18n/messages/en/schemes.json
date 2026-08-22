@@ -12,5 +12,20 @@
   "reasonCultivableShare": "Verified cultivable land parcel linked",
   "reasonActiveCrop": "Active Kharif crop survey recorded",
   "reasonNoDuplicate": "No active conflicting subsidy application",
-  "sourceMahadbt": "Mock MahaDBT"
+  "sourceMahadbt": "Mock MahaDBT",
+  "pageTitle": "Available Government Subsidies & Credit",
+  "pageSubtitle": "Explore subsidies and credit schemes evaluated against your synthetic farm profile",
+  "selectOffering": "Include in Application",
+  "removeOffering": "Remove",
+  "selectedCount": "{count} selected",
+  "reviewAndApply": "Review & Apply ({count})",
+  "disclaimer": "Eligibility is indicative only and based on simulated mock data.",
+  "detailsTitle": "Scheme Information & Eligibility",
+  "benefitsTitle": "Estimated Benefits",
+  "eligibilityCriteria": "Eligibility Criteria",
+  "guidelines": "Scheme Guidelines",
+  "backToSchemes": "Back to Schemes",
+  "subsidyRate": "{percent}% capital subsidy",
+  "viewSchemeDetails": "View Details",
+  "alreadySelected": "Selected"
 }

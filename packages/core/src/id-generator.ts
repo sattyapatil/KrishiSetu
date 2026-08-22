@@ -1,17 +1,26 @@
-import { randomUUID } from 'node:crypto';
-
 export interface IdGenerator {
   nextUuid(): string;
   nextPrefixedId(prefix: string): string;
 }
 
+function generateUuid(): string {
+  if (typeof globalThis !== 'undefined' && globalThis.crypto?.randomUUID) {
+    return globalThis.crypto.randomUUID();
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
 export class CryptoIdGenerator implements IdGenerator {
   nextUuid(): string {
-    return randomUUID();
+    return generateUuid();
   }
 
   nextPrefixedId(prefix: string): string {
-    const raw = randomUUID().replace(/-/g, '').slice(0, 12);
+    const raw = generateUuid().replace(/-/g, '').slice(0, 12);
     return `${prefix}_${raw}`;
   }
 }
