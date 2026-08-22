@@ -27,12 +27,12 @@ function getKeysAndPlaceholders(obj: Record<string, unknown>, prefix = ''): Map<
 
 describe('KrishiSetu Locale Completeness & Interpolation Parity', () => {
   const messagesRoot = path.join(workspaceRoot, 'packages/i18n/messages');
-  const locales = ['en', 'mr', 'hi', 'kn'] as const;
+  const otherLocales = ['mr', 'hi', 'kn'] as const;
 
   it('all four locales (en, mr, hi, kn) have identical message namespaces and keys', () => {
     const enFiles = fs.readdirSync(path.join(messagesRoot, 'en')).filter((f) => f.endsWith('.json'));
 
-    for (const locale of ['mr', 'hi', 'kn']) {
+    for (const locale of otherLocales) {
       const localeDir = path.join(messagesRoot, locale);
       assert.ok(fs.existsSync(localeDir), `Locale directory missing: ${locale}`);
 

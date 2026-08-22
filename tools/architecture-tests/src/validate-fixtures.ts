@@ -1,4 +1,6 @@
 import { SYNTHETIC_DEMO_FARMERS } from '@krishisetu/testing';
+import { SYNTHETIC_PUBLIC_NOTICES } from '@krishisetu/notifications';
+import { SYNTHETIC_DISTRICT_WEATHER } from '@krishisetu/weather-advisory';
 
 export function validateFixtures(): boolean {
   console.log('Validating synthetic fixture invariants...');
@@ -18,6 +20,26 @@ export function validateFixtures(): boolean {
     const num = Number.parseInt(farmer.farmerId.slice(6), 10);
     if (num < 1 || num > 99) {
       console.error(`FAIL: Farmer ID suffix ${num} is outside synthetic range 01-99`);
+      hasErrors = true;
+    }
+  }
+
+  // Validate Public Notices Fixtures
+  for (const notice of SYNTHETIC_PUBLIC_NOTICES) {
+    if (!notice.prototypeData) {
+      console.error(`FAIL: Notice ${notice.id} missing prototypeData: true`);
+      hasErrors = true;
+    }
+    if (!notice.id.startsWith('notice-')) {
+      console.error(`FAIL: Notice ${notice.id} ID does not follow notice- prefix convention`);
+      hasErrors = true;
+    }
+  }
+
+  // Validate District Weather Fixtures
+  for (const weather of SYNTHETIC_DISTRICT_WEATHER) {
+    if (!weather.prototypeData || weather.source !== 'MOCK_AGROMET') {
+      console.error(`FAIL: Weather ${weather.districtId} missing prototypeData or MOCK_AGROMET source`);
       hasErrors = true;
     }
   }

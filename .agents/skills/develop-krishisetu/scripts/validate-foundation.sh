@@ -112,7 +112,7 @@ if (liveHostHits.length > 0) {
 const envFiles = scanRoots.flatMap(d => getFiles(d, ['.ts', '.tsx', '.js', '.mjs', '.cjs']));
 const envHits = envFiles.filter(f => {
   const rel = path.relative(workspaceRoot, f);
-  if (rel.startsWith('packages/config/') || rel.startsWith('tools/')) return false;
+  if (rel.startsWith('packages/config/') || rel.startsWith('packages/eslint-config/') || rel.startsWith('tools/')) return false;
   const content = fs.readFileSync(f, 'utf8');
   return /\bprocess\.env\b/.test(content);
 });
@@ -128,15 +128,16 @@ if (envHits.length > 0) {
 const hexFiles = scanRoots.flatMap(d => getFiles(d, ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss']));
 const hexHits = hexFiles.filter(f => {
   const rel = path.relative(workspaceRoot, f);
-  if (rel.includes('/packages/design-tokens/') || rel.includes('/generated/') || rel.includes('.test.') || rel.includes('/tests/')) return false;
+  if (rel.includes('/packages/design-tokens/') || rel.includes('/generated/') || rel.includes('.test.') || rel.includes('/tests/') || rel.includes('/fixtures/')) return false;
   const content = fs.readFileSync(f, 'utf8');
-  // Disallow standalone hex colors not in CSS variables or comments
-  return /(?<!var\(--ks-color-[^,)]+,\s*)#[0-9A-Fa-f]{6}\b/.test(content);
+  const noComments = content.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '');
+  const stripped = noComments.replace(/var\(--ks-color-[^,)]+,\s*#[0-9A-Fa-f]{3,8}\)/g, '');
+  return /#[0-9A-Fa-f]{3,8}\b/.test(stripped);
 });
 
 if (hexHits.length > 0) {
-  // Check if hex colours are used
-  console.log('PASS: raw design colours are confined to approved locations');
+  console.error('FAIL: raw hex design colours found outside token sources:', hexHits);
+  nodeFailures++;
 } else {
   console.log('PASS: raw design colours are confined to approved locations');
 }

@@ -17,5 +17,12 @@
   "success-surface": "#f0fdf4",
   "warning-surface": "#fef3c7",
   "warning-text": "#78350f",
+  "warning-border": "#fde68a",
+  "error-border": "#fecaca",
+  "success-border": "#86efac",
+  "info-border": "#bfdbfe",
+  "disabled-surface": "#e2e8f0",
+  "disabled-text": "#475569",
+  "disabled-border": "#cbd5e1",
   "focus": "#0f172a"
 }

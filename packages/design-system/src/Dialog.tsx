@@ -70,7 +70,7 @@ export function Dialog({
         style={{
           width: '100%',
           maxWidth: '32rem',
-          backgroundColor: '#ffffff',
+          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
           borderRadius: '0.75rem',
           boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
           overflow: 'hidden',

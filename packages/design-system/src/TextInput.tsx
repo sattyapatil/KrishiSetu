@@ -67,7 +67,7 @@ export function TextInput({
           fontSize: '1rem',
           lineHeight: '1.5rem',
           color: 'var(--ks-color-text, #0f172a)',
-          backgroundColor: '#ffffff',
+          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
           borderWidth: '1px',
           borderStyle: 'solid',
           borderColor: hasError ? 'var(--ks-color-error, #dc2626)' : 'var(--ks-color-border, #cbd5e1)',

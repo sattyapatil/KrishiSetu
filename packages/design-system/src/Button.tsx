@@ -34,7 +34,7 @@ export function Button({
     switch (variant) {
       case 'secondary':
         return {
-          backgroundColor: '#ffffff',
+          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
           color: 'var(--ks-color-civic-blue, #1e3a8a)',
           borderColor: 'var(--ks-color-civic-blue, #1e3a8a)',
         };
@@ -47,7 +47,7 @@ export function Button({
       case 'danger':
         return {
           backgroundColor: 'var(--ks-color-error, #dc2626)',
-          color: '#ffffff',
+          color: 'var(--ks-color-surface-card, #ffffff)',
           borderColor: 'var(--ks-color-error, #dc2626)',
         };
       case 'ghost':
@@ -60,7 +60,7 @@ export function Button({
       default:
         return {
           backgroundColor: 'var(--ks-color-agri-green, #166534)',
-          color: '#ffffff',
+          color: 'var(--ks-color-surface-card, #ffffff)',
           borderColor: 'var(--ks-color-agri-green, #166534)',
         };
     }

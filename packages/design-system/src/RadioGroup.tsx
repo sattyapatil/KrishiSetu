@@ -84,7 +84,7 @@ export function RadioGroup({
                 borderWidth: '1px',
                 borderStyle: 'solid',
                 borderColor: isSelected ? 'var(--ks-color-civic-blue, #1e3a8a)' : 'var(--ks-color-border, #cbd5e1)',
-                backgroundColor: isSelected ? 'var(--ks-color-civic-blue-light, #dbeafe)' : '#ffffff',
+                backgroundColor: isSelected ? 'var(--ks-color-civic-blue-light, #dbeafe)' : 'var(--ks-color-surface-card, #ffffff)',
                 cursor: opt.disabled ? 'not-allowed' : 'pointer',
                 opacity: opt.disabled ? 0.6 : 1,
               }}

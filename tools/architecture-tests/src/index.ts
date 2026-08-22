@@ -1,1 +1,1 @@
-export * from './validate-fixtures';
+export * from './validate-fixtures.js';

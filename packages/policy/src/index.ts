@@ -1,3 +1,3 @@
-export * from './consent-catalog';
-export * from './permission-catalog';
-export * from './data-classification';
+export * from './consent-catalog.js';
+export * from './permission-catalog.js';
+export * from './data-classification.js';

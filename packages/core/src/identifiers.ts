@@ -1,4 +1,4 @@
-import { DomainError, Result, err, ok } from './result';
+import { DomainError, Result, err, ok } from './result.js';
 
 export type Branded<T, B> = T & { readonly __brand: B };
 

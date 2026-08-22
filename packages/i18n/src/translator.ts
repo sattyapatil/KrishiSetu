@@ -1,4 +1,4 @@
-import { Locale } from './locale-registry';
+import { Locale } from './locale-registry.js';
 
 // Pre-imported message catalogs for in-memory synchronous lookups
 import enBrand from '../messages/en/brand.json' with { type: 'json' };
@@ -14,6 +14,8 @@ import enCredit from '../messages/en/credit.json' with { type: 'json' };
 import enApps from '../messages/en/applications.json' with { type: 'json' };
 import enPrivacy from '../messages/en/privacy.json' with { type: 'json' };
 import enErrors from '../messages/en/errors.json' with { type: 'json' };
+import enNotifications from '../messages/en/notifications.json' with { type: 'json' };
+import enWeather from '../messages/en/weather.json' with { type: 'json' };
 
 import mrBrand from '../messages/mr/brand.json' with { type: 'json' };
 import mrCommon from '../messages/mr/common.json' with { type: 'json' };
@@ -28,6 +30,8 @@ import mrCredit from '../messages/mr/credit.json' with { type: 'json' };
 import mrApps from '../messages/mr/applications.json' with { type: 'json' };
 import mrPrivacy from '../messages/mr/privacy.json' with { type: 'json' };
 import mrErrors from '../messages/mr/errors.json' with { type: 'json' };
+import mrNotifications from '../messages/mr/notifications.json' with { type: 'json' };
+import mrWeather from '../messages/mr/weather.json' with { type: 'json' };
 
 import hiBrand from '../messages/hi/brand.json' with { type: 'json' };
 import hiCommon from '../messages/hi/common.json' with { type: 'json' };
@@ -42,6 +46,8 @@ import hiCredit from '../messages/hi/credit.json' with { type: 'json' };
 import hiApps from '../messages/hi/applications.json' with { type: 'json' };
 import hiPrivacy from '../messages/hi/privacy.json' with { type: 'json' };
 import hiErrors from '../messages/hi/errors.json' with { type: 'json' };
+import hiNotifications from '../messages/hi/notifications.json' with { type: 'json' };
+import hiWeather from '../messages/hi/weather.json' with { type: 'json' };
 
 import knBrand from '../messages/kn/brand.json' with { type: 'json' };
 import knCommon from '../messages/kn/common.json' with { type: 'json' };
@@ -56,6 +62,8 @@ import knCredit from '../messages/kn/credit.json' with { type: 'json' };
 import knApps from '../messages/kn/applications.json' with { type: 'json' };
 import knPrivacy from '../messages/kn/privacy.json' with { type: 'json' };
 import knErrors from '../messages/kn/errors.json' with { type: 'json' };
+import knNotifications from '../messages/kn/notifications.json' with { type: 'json' };
+import knWeather from '../messages/kn/weather.json' with { type: 'json' };
 
 export const MESSAGES = {
   en: {
@@ -72,6 +80,8 @@ export const MESSAGES = {
     applications: enApps,
     privacy: enPrivacy,
     errors: enErrors,
+    notifications: enNotifications,
+    weather: enWeather,
   },
   mr: {
     brand: mrBrand,
@@ -87,6 +97,8 @@ export const MESSAGES = {
     applications: mrApps,
     privacy: mrPrivacy,
     errors: mrErrors,
+    notifications: mrNotifications,
+    weather: mrWeather,
   },
   hi: {
     brand: hiBrand,
@@ -102,6 +114,8 @@ export const MESSAGES = {
     applications: hiApps,
     privacy: hiPrivacy,
     errors: hiErrors,
+    notifications: hiNotifications,
+    weather: hiWeather,
   },
   kn: {
     brand: knBrand,
@@ -117,6 +131,8 @@ export const MESSAGES = {
     applications: knApps,
     privacy: knPrivacy,
     errors: knErrors,
+    notifications: knNotifications,
+    weather: knWeather,
   },
 } as const;
 

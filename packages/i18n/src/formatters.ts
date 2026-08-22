@@ -1,4 +1,4 @@
-import { Locale } from './locale-registry';
+import { Locale } from './locale-registry.js';
 
 const LOCALE_TO_INTL_MAP: Record<Locale, string> = {
   en: 'en-IN',

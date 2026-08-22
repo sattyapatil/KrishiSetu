@@ -21,7 +21,7 @@ export function Alert({
         return {
           backgroundColor: 'var(--ks-color-warning-surface, #fef3c7)',
           color: 'var(--ks-color-warning-text, #78350f)',
-          borderColor: '#fde68a',
+          borderColor: 'var(--ks-color-warning-border, #fde68a)',
           icon: '⚠',
           role: 'status',
         };
@@ -29,7 +29,7 @@ export function Alert({
         return {
           backgroundColor: 'var(--ks-color-error-surface, #fef2f2)',
           color: 'var(--ks-color-error-dark, #991b1b)',
-          borderColor: '#fecaca',
+          borderColor: 'var(--ks-color-error-border, #fecaca)',
           icon: '✕',
           role: 'alert',
         };
@@ -37,7 +37,7 @@ export function Alert({
         return {
           backgroundColor: 'var(--ks-color-success-surface, #f0fdf4)',
           color: 'var(--ks-color-success-dark, #166534)',
-          borderColor: '#86efac',
+          borderColor: 'var(--ks-color-success-border, #86efac)',
           role: 'status',
           icon: '✓',
         };
@@ -46,7 +46,7 @@ export function Alert({
         return {
           backgroundColor: 'var(--ks-color-civic-blue-light, #dbeafe)',
           color: 'var(--ks-color-civic-blue-dark, #172554)',
-          borderColor: '#bfdbfe',
+          borderColor: 'var(--ks-color-info-border, #bfdbfe)',
           icon: 'ℹ',
           role: 'status',
         };

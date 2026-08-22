@@ -30,7 +30,7 @@ export function PrototypeNotice({
         lineHeight: 'var(--ks-line-height-xs, 1.125rem)',
         fontWeight: 'var(--ks-font-weight-semibold, 600)',
         textAlign: 'center',
-        borderBottom: '1px solid #fde68a',
+        borderBottom: '1px solid var(--ks-color-warning-border, #fde68a)',
       }}
     >
       <span>{message}</span>

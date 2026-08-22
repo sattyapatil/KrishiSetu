@@ -1,4 +1,4 @@
-import { Locale, isSupportedLocale, localeRegistry } from './locale-registry';
+import { Locale, isSupportedLocale, localeRegistry } from './locale-registry.js';
 
 export type LocaleResolutionSource =
   | 'URL_PATH'

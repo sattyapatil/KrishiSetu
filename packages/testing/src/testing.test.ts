@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { SYNTHETIC_DEMO_FARMERS, isAllowlistedFarmerId } from './index';
+import { SYNTHETIC_DEMO_FARMERS, isAllowlistedFarmerId } from './index.js';
 
 describe('packages/testing', () => {
   it('SYNTHETIC_DEMO_FARMERS defines allowlisted personas with synthetic: true', () => {

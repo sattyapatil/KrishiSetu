@@ -1,0 +1,82 @@
+{
+  "title": "Public Notices & Advisories",
+  "centreTitle": "Notification Centre",
+  "unreadCount": "{count} new updates",
+  "filterAll": "All Notices",
+  "filterCritical": "Urgent Deadlines",
+  "filterSchemes": "Scheme Windows",
+  "filterForms": "Revised Forms",
+  "emptyStateTitle": "No notices found",
+  "emptyStateDescription": "There are no public notices matching your selected filter.",
+  "archiveTitle": "Archived & Past Notices",
+  "archiveDescription": "{count} past notices from completed application windows.",
+  "showArchive": "Show Past Notices ({count})",
+  "hideArchive": "Hide Past Notices",
+  "effectivePeriod": "Valid: {from} to {to}",
+  "effectiveFrom": "Published: {from}",
+  "sourcePrefix": "Source: {source}",
+  "corrigendumNotice": "Corrigendum to notice #{id}",
+  "prototypeBadge": "Synthetic Public Notice",
+  "close": "Close Notification Centre",
+  "forms": {
+    "selfDeclaration": "Farmer Land & Crop Self-Declaration Form"
+  },
+  "actions": {
+    "viewScheme": "View Scheme Details",
+    "applyNow": "Apply Before Deadline",
+    "downloadForm": "Download Revised Form",
+    "close": "Close"
+  },
+  "sources": {
+    "MAHADBT_SCHEMES": "MahaDBT Schemes Portal",
+    "AGRI_DEPT": "Department of Agriculture",
+    "REVENUE_DEPT": "Revenue & Land Department",
+    "KRISHISETU_SYSTEM": "KrishiSetu Platform System"
+  },
+  "types": {
+    "SCHEME_WINDOW": "Scheme Window",
+    "APPLICATION_DEADLINE": "Deadline Notice",
+    "REVISED_FORM": "Revised Form",
+    "CORRIGENDUM": "Corrigendum",
+    "SERVICE_ADVISORY": "Service Advisory",
+    "GENERAL_ANNOUNCEMENT": "Announcement"
+  },
+  "priorities": {
+    "CRITICAL": "Urgent",
+    "HIGH": "Important",
+    "NORMAL": "Standard",
+    "LOW": "Information"
+  },
+  "notices": {
+    "dripWindow": {
+      "title": "PMKSY Drip & Micro-Irrigation Application Window Open",
+      "summary": "Eligible farmers in drought-prone talukas can submit pre-filled applications for up to 80% subsidy.",
+      "body": "Subsidies under PM Krishi Sinchayee Yojana are available for certified land parcels. Verification will be auto-completed via Mahabhumi records."
+    },
+    "solarDeadline": {
+      "title": "Solar Agriculture Pump Subsidy Deadline Approaching",
+      "summary": "Window closes on August 31, 2026 for priority small and marginal farmers.",
+      "body": "Ensure your electricity connection NOC and cultivable land records are verified in the profile before final submission."
+    },
+    "revisedForm": {
+      "title": "Self-Declaration Format Revised (Version 3.1)",
+      "summary": "Single-page digital consent and crop confirmation declaration replaces physical affidavit.",
+      "body": "Physical stamp papers are no longer required for scheme applications under ₹1,00,000 when authenticated digitally."
+    },
+    "corrigendumNorms": {
+      "title": "Corrigendum: Landholding Ceilings for Drip Subsidy in Dryland Areas",
+      "summary": "Maximum ceiling relaxed to 5 hectares for rainfed dryland farmers in Pune division.",
+      "body": "Amended guidelines apply to all applications submitted after August 15, 2026. Prior applicants need not re-apply."
+    },
+    "serviceAdvisory": {
+      "title": "Scheduled Portal Maintenance on August 24",
+      "summary": "MahaDBT integration gateway will undergo brief maintenance between 22:00 and 04:00 IST.",
+      "body": "Application submission will pause during the maintenance window. Existing saved drafts will remain securely stored."
+    },
+    "archivedKharif": {
+      "title": "Kharif 2025 Certified Seed Subsidy Window Closed",
+      "summary": "Application window concluded on July 31, 2025. Benefit disbursals completed.",
+      "body": "Archived for transparency and verification audit purposes."
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { generateTokensCss } from './generate-tokens';
-import { generateMessageKeys } from './generate-message-keys';
+import { generateTokensCss } from './generate-tokens.js';
+import { generateMessageKeys } from './generate-message-keys.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

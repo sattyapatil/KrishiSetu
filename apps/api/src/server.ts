@@ -1,6 +1,6 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
-import { createApp } from './app';
+import { createApp } from './app.js';
 import { env, productConfig, moduleRegistry } from '@krishisetu/config';
 import { localeRegistry } from '@krishisetu/i18n';
 import { SYNTHETIC_DEMO_FARMERS } from '@krishisetu/testing';
@@ -79,4 +79,4 @@ if (process.argv[1] && process.argv[1].includes('server')) {
   startServer();
 }
 
-export * from './app';
+export * from './app.js';

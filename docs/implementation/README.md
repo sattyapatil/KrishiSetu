@@ -1,6 +1,7 @@
 # KrishiSetu Implementation
 
 - [Final phase-based implementation plan](./KRISHISETU-FINAL-IMPLEMENTATION-PLAN.md)
+- [Foundation audit, notifications, weather, and dashboard plan](./KRISHISETU-FOUNDATION-AUDIT-NOTIFICATIONS-WEATHER-DASHBOARD-PLAN.md)
+- [Gemini 3.7 Flash High handoff 02](./GEMINI-3.7-FLASH-HIGH-HANDOFF-02.md)
 
 The phase-based plan supersedes the date-oriented sequencing in `docs/architecture/HACKATHON-EXECUTION-PLAN.md`. The old plan remains useful for its demo script, release gates, and contingency guidance.
-

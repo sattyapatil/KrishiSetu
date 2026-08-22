@@ -1,3 +1,3 @@
-export * from './errors/error-catalog';
-export * from './api/common';
-export * from './api/routes';
+export * from './errors/error-catalog.js';
+export * from './api/common.js';
+export * from './api/routes.js';

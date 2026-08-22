@@ -70,7 +70,7 @@ describe('KrishiSetu Architecture Boundary Invariants', () => {
     const violations: string[] = [];
     for (const file of tsFiles) {
       const rel = path.relative(workspaceRoot, file);
-      if (rel.startsWith('packages/config/') || rel.startsWith('tools/')) {
+      if (rel.startsWith('packages/config/') || rel.startsWith('packages/eslint-config/') || rel.startsWith('tools/')) {
         continue;
       }
       const content = fs.readFileSync(file, 'utf8');
@@ -99,18 +99,25 @@ describe('KrishiSetu Architecture Boundary Invariants', () => {
         rel.includes('/tokens/') ||
         rel.includes('/generated/') ||
         rel.includes('.test.') ||
-        rel.includes('/tests/')
+        rel.includes('/tests/') ||
+        rel.includes('/fixtures/')
       ) {
         continue;
       }
       const content = fs.readFileSync(file, 'utf8');
-      // Match raw 6-digit hex color literals like #1e3a8a
-      if (/#[0-9A-Fa-f]{6}\b/.test(content)) {
-        // If it's a fallback inside var(--ks-color-..., #1e3a8a), it's permitted by token definition, but let's check
+      const noComments = content.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '');
+      const stripped = noComments.replace(/var\(--ks-color-[^,)]+,\s*#[0-9A-Fa-f]{3,8}\)/g, '');
+      const hexMatches = stripped.match(/#[0-9A-Fa-f]{3,8}\b/g);
+      if (hexMatches && hexMatches.length > 0) {
+        violations.push(`${rel}: ${hexMatches.join(', ')}`);
       }
     }
 
-    assert.ok(true);
+    assert.deepEqual(
+      violations,
+      [],
+      `Raw hex colors found outside token sources: ${violations.join(', ')}`
+    );
   });
 
   it('ensures no prohibited official government emblem files exist in prototype', () => {

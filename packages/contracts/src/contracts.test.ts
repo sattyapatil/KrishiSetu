@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { errorCatalog, apiRoutes } from './index';
+import { errorCatalog, apiRoutes } from './index.js';
 
 describe('packages/contracts', () => {
   it('errorCatalog defines status codes and message keys for all standard errors', () => {

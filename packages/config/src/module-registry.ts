@@ -60,6 +60,10 @@ export const moduleRegistry = {
     enabled: false,
     descriptionKey: 'modules.notifications.description',
   },
+  weatherAdvisory: {
+    enabled: false,
+    descriptionKey: 'modules.weatherAdvisory.description',
+  },
   audit: {
     enabled: true,
     required: true,

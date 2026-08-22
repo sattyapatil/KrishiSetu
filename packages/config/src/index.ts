@@ -1,3 +1,3 @@
-export * from './product.config';
-export * from './module-registry';
-export * from './env.schema';
+export * from './product.config.js';
+export * from './module-registry.js';
+export * from './env.schema.js';

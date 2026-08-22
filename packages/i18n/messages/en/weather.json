@@ -1,0 +1,81 @@
+{
+  "title": "District Weather & Agromet Advisory",
+  "subtitle": "Micro-climatic forecast and crop management guidelines for your block",
+  "prototypeBadge": "Synthetic Weather Model",
+  "currentCondition": "Current Weather",
+  "rainfall24h": "24h Rainfall",
+  "humidity": "Relative Humidity",
+  "windSpeed": "Wind Speed",
+  "fiveDayForecast": "5-Day Agricultural Forecast",
+  "forecastTableTitle": "Detailed Forecast Table",
+  "forecastTableSummary": "Five-day weather outlook including expected precipitation, temperature spread, and rain probability.",
+  "agrometTitle": "Agromet Crop Advisory Bulletin",
+  "validUntil": "Advisory valid until: {date}",
+  "staleNotice": "Weather data is currently updating. Showing latest cached forecast.",
+  "unavailableNotice": "Micro-climatic weather data is temporarily unavailable for this location.",
+  "sourcePrefix": "Source: {source}",
+  "viewTable": "View Table Format",
+  "viewVisual": "View Visual Cards",
+  "tableHeaders": {
+    "date": "Date / Day",
+    "condition": "Expected Condition",
+    "temperature": "Temp (Min / Max)",
+    "rainfall": "Expected Rain",
+    "probability": "Rain Chance"
+  },
+  "units": {
+    "celsius": "°C",
+    "mm": "mm",
+    "kmh": "km/h",
+    "percent": "%"
+  },
+  "districts": {
+    "pune": "Pune District",
+    "baramati": "Baramati Sub-division"
+  },
+  "talukas": {
+    "haveli": "Haveli Taluka",
+    "baramati": "Baramati Taluka"
+  },
+  "days": {
+    "sat": "Saturday",
+    "sun": "Sunday",
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday"
+  },
+  "conditions": {
+    "CLEAR": "Sunny & Clear",
+    "PARTLY_CLOUDY": "Partly Cloudy",
+    "CLOUDY": "Overcast",
+    "LIGHT_RAIN": "Light Showers",
+    "MODERATE_RAIN": "Moderate Monsoon Rain",
+    "HEAVY_RAIN": "Heavy Rain",
+    "THUNDERSTORM": "Thunderstorm with Gusty Winds",
+    "FOG": "Morning Fog"
+  },
+  "warnings": {
+    "thunderstorm": {
+      "title": "Yellow Alert: Thunderstorm & Lightning",
+      "instruction": "Avoid taking shelter under isolated trees during lightning. Ensure drainage channels in seedling beds are clear."
+    }
+  },
+  "agromet": {
+    "generalMonsoonAdvice": "Due to expected moderate showers, pause pesticide spraying and postpone fertilizer top-dressing until weather clears.",
+    "generalDrylandAdvice": "Soil moisture is currently optimal. Maintain protective inter-cultivation for moisture conservation.",
+    "stages": {
+      "vegetative": "Vegetative Growth Stage",
+      "tillering": "Tillering Stage",
+      "nursery": "Nursery Bed Preparation",
+      "grandGrowth": "Grand Growth Stage"
+    },
+    "crops": {
+      "soybeanAdvice": "Ensure excess rainwater drains out from soybean fields within 24 hours to prevent root rot.",
+      "sugarcaneAdvice": "Carry out earthing up in sugarcane crops to prevent lodging from gusty winds.",
+      "onionAdvice": "Provide raised bed drainage for kharif onion nurseries to prevent damping-off disease.",
+      "sugarcaneIrrigationAdvice": "Apply light drip irrigation during early morning hours to maintain root zone aeration."
+    }
+  }
+}

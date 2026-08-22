@@ -1,4 +1,4 @@
-import { DomainError, Result, err, ok } from './result';
+import { DomainError, Result, err, ok } from './result.js';
 
 /**
  * Money value object representing monetary values in integer paise.

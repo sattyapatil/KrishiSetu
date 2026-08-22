@@ -1,4 +1,4 @@
-import { Locale } from './locale-registry';
+import { Locale } from './locale-registry.js';
 
 export const FONT_FAMILIES = {
   latin: 'var(--ks-font-latin, "Noto Sans", system-ui, sans-serif)',

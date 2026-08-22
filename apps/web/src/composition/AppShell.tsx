@@ -86,7 +86,7 @@ export function AppShell({
       <footer
         style={{
           padding: '1.5rem 1rem',
-          backgroundColor: '#ffffff',
+          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
           borderTop: '1px solid var(--ks-color-border, #cbd5e1)',
           textAlign: 'center',
           fontSize: '0.875rem',

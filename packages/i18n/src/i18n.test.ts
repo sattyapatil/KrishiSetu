@@ -9,7 +9,7 @@ import {
   formatHectares,
   translate,
   MESSAGES,
-} from './index';
+} from './index.js';
 
 describe('packages/i18n', () => {
   it('localeRegistry defines en as default and en, mr, hi, kn as supported', () => {
@@ -75,6 +75,8 @@ describe('packages/i18n', () => {
       });
       assert.equal(res.locale, 'en');
       assert.equal(res.source, 'SAFETY_FALLBACK');
+      assert.equal(parseAcceptLanguage('mr-IN,mr;q=0.9'), 'mr');
+      assert.equal(parseAcceptLanguage(''), null);
     });
   });
 

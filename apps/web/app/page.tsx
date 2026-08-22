@@ -64,6 +64,7 @@ export default function HomePage(): React.JSX.Element {
       {view === 'dashboard' && (
         <DashboardView
           locale={locale}
+          farmerId={farmerId}
           onProceedToBundle={handleProceedToBundle}
         />
       )}

@@ -1,5 +1,5 @@
-import { Clock } from './clock';
-import { ConsentId, PrincipalId, UserId } from './identifiers';
+import { Clock } from './clock.js';
+import { ConsentId, PrincipalId, UserId } from './identifiers.js';
 
 export interface ExecutionContext {
   readonly requestId: string;

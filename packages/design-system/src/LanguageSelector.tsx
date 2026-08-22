@@ -35,7 +35,7 @@ export function LanguageSelector({
           padding: '0.375rem 0.75rem',
           borderRadius: '0.375rem',
           border: '1px solid var(--ks-color-border, #cbd5e1)',
-          backgroundColor: '#ffffff',
+          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
           color: 'var(--ks-color-civic-blue, #1e3a8a)',
           fontSize: '0.875rem',
           fontWeight: 700,

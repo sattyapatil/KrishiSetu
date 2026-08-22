@@ -1,2 +1,2 @@
-export * from './redaction';
-export * from './logger';
+export * from './redaction.js';
+export * from './logger.js';

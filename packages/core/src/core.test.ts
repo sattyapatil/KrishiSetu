@@ -14,7 +14,7 @@ import {
   DeterministicIdGenerator,
   createExecutionContext,
   InMemoryEventBus,
-} from './index';
+} from './index.js';
 
 describe('packages/core', () => {
   describe('Result and DomainError', () => {
@@ -146,7 +146,7 @@ describe('packages/core', () => {
     it('InMemoryEventBus publishes and receives events', async () => {
       const bus = new InMemoryEventBus();
       const received: string[] = [];
-      const unsub = bus.subscribe('test.event.v1', (e) => {
+      const unsub = bus.subscribe('test.event.v1', (e: { type: string }) => {
         received.push(e.type);
       });
 

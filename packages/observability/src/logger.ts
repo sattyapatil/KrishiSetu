@@ -1,4 +1,4 @@
-import { sanitizeLogPayload } from './redaction';
+import { sanitizeLogPayload } from './redaction.js';
 
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 

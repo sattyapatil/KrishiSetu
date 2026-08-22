@@ -58,7 +58,7 @@ export function Accordion({
                   width: '100%',
                   minHeight: '3rem',
                   padding: '0.875rem 1.25rem',
-                  backgroundColor: isExpanded ? 'var(--ks-color-surface-page, #f8fafc)' : '#ffffff',
+                  backgroundColor: isExpanded ? 'var(--ks-color-surface-page, #f8fafc)' : 'var(--ks-color-surface-card, #ffffff)',
                   border: 'none',
                   textAlign: 'start',
                   fontSize: '1rem',
@@ -81,7 +81,7 @@ export function Accordion({
                 aria-labelledby={headerId}
                 style={{
                   padding: '1rem 1.25rem',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
                   borderTop: '1px solid var(--ks-color-border, #cbd5e1)',
                 }}
               >

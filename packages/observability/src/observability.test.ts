@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { sanitizeLogPayload, redactValue, Logger } from './index';
+import { sanitizeLogPayload, redactValue, Logger } from './index.js';
 
 describe('packages/observability', () => {
   it('redacts sensitive keys including PIN, secret, tokens, password', () => {

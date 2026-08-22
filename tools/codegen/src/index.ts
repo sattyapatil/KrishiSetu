@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
-import { writeGeneratedTokens } from './generate-tokens';
-import { writeGeneratedMessageKeys } from './generate-message-keys';
+import { writeGeneratedTokens } from './generate-tokens.js';
+import { writeGeneratedMessageKeys } from './generate-message-keys.js';
 
 export function runCodegen(): void {
   console.log('Running KrishiSetu single-source-of-truth codegen pipeline...');
@@ -18,6 +18,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   runCodegen();
 }
 
-export * from './generate-tokens';
-export * from './generate-message-keys';
-export * from './check-drift';
+export * from './generate-tokens.js';
+export * from './generate-message-keys.js';
+export * from './check-drift.js';
+

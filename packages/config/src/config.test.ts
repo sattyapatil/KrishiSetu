@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { productConfig, moduleRegistry, loadRuntimeConfig } from './index';
+import { productConfig, moduleRegistry, loadRuntimeConfig } from './index.js';
 
 describe('packages/config', () => {
   it('productConfig has required brand and safety properties', () => {

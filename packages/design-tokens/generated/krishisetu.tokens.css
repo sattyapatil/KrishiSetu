@@ -29,6 +29,13 @@
   --ks-color-success-surface: #f0fdf4;
   --ks-color-warning-surface: #fef3c7;
   --ks-color-warning-text: #78350f;
+  --ks-color-warning-border: #fde68a;
+  --ks-color-error-border: #fecaca;
+  --ks-color-success-border: #86efac;
+  --ks-color-info-border: #bfdbfe;
+  --ks-color-disabled-surface: #e2e8f0;
+  --ks-color-disabled-text: #475569;
+  --ks-color-disabled-border: #cbd5e1;
   --ks-color-focus: #0f172a;
 
   --ks-font-size-xs: 0.75rem;

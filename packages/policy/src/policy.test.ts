@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { consentScopes, consentPurposes, retentionPolicies, permissions, dataClasses } from './index';
+import { consentScopes, consentPurposes, retentionPolicies, permissions, dataClasses } from './index.js';
 
 describe('packages/policy', () => {
   it('consentScopes defines all required agricultural, identity, benefit, and credit scopes', () => {
@@ -26,6 +26,11 @@ describe('packages/policy', () => {
     assert.ok(bundle.requiredScopes.includes('CREDIT_PREAPPLY'));
   });
 
+  it('permissions defines core system authorization scopes', () => {
+    assert.equal(permissions.FARMER_SELF_READ, 'FARMER_SELF_READ');
+    assert.equal(permissions.CONSENT_MANAGE, 'CONSENT_MANAGE');
+  });
+
   it('retentionPolicies covers all ephemeral and synthetic classifications', () => {
     assert.equal(retentionPolicies.dashboardCache.onRevocation, 'DELETE_IMMEDIATELY');
     assert.equal(retentionPolicies.normalizedSnapshots.onRevocation, 'DELETE_IMMEDIATELY');
@@ -39,3 +44,4 @@ describe('packages/policy', () => {
     assert.equal(dataClasses.SECRET.loggingAllowed, false);
   });
 });
+

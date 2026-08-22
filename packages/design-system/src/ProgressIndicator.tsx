@@ -69,7 +69,7 @@ export function ProgressIndicator({
                       : isCurrent
                       ? 'var(--ks-color-civic-blue, #1e3a8a)'
                       : 'var(--ks-color-surface-page, #f8fafc)',
-                    color: isCompleted || isCurrent ? '#ffffff' : 'var(--ks-color-text-muted, #475569)',
+                    color: isCompleted || isCurrent ? 'var(--ks-color-surface-card, #ffffff)' : 'var(--ks-color-text-muted, #475569)',
                     border: `2px solid ${isCompleted ? 'var(--ks-color-success-dark, #166534)' : isCurrent ? 'var(--ks-color-civic-blue, #1e3a8a)' : 'var(--ks-color-border, #cbd5e1)'}`,
                     fontSize: '0.75rem',
                     fontWeight: 700,
@@ -106,7 +106,7 @@ export function Skeleton({
         width,
         height,
         borderRadius,
-        backgroundColor: '#e2e8f0',
+        backgroundColor: 'var(--ks-color-disabled-surface, #e2e8f0)',
         animation: 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       }}
     />
@@ -169,7 +169,7 @@ export function ErrorState({
         textAlign: 'center',
         backgroundColor: 'var(--ks-color-error-surface, #fef2f2)',
         borderRadius: '0.75rem',
-        border: '1px solid #fecaca',
+        border: '1px solid var(--ks-color-error-border, #fecaca)',
         color: 'var(--ks-color-error-dark, #991b1b)',
         margin: '1rem 0',
       }}
@@ -189,7 +189,7 @@ export function ErrorState({
             padding: '0.5rem 1.25rem',
             borderRadius: '0.375rem',
             backgroundColor: 'var(--ks-color-error-dark, #991b1b)',
-            color: '#ffffff',
+            color: 'var(--ks-color-surface-card, #ffffff)',
             border: 'none',
             fontWeight: 700,
             fontSize: '0.875rem',

@@ -20,7 +20,7 @@ export function StatusBadge({
           defaultLabel: 'Ready',
           color: 'var(--ks-color-success-dark, #166534)',
           backgroundColor: 'var(--ks-color-success-surface, #f0fdf4)',
-          borderColor: '#86efac',
+          borderColor: 'var(--ks-color-success-border, #86efac)',
           icon: '✓',
         };
       case 'needsAction':
@@ -28,7 +28,7 @@ export function StatusBadge({
           defaultLabel: 'Needs Action',
           color: 'var(--ks-color-warning-text, #78350f)',
           backgroundColor: 'var(--ks-color-warning-surface, #fef3c7)',
-          borderColor: '#fde68a',
+          borderColor: 'var(--ks-color-warning-border, #fde68a)',
           icon: '!',
         };
       case 'error':
@@ -36,7 +36,7 @@ export function StatusBadge({
           defaultLabel: 'Blocked',
           color: 'var(--ks-color-error-dark, #991b1b)',
           backgroundColor: 'var(--ks-color-error-surface, #fef2f2)',
-          borderColor: '#fecaca',
+          borderColor: 'var(--ks-color-error-border, #fecaca)',
           icon: '✕',
         };
       case 'mockResult':
@@ -44,7 +44,7 @@ export function StatusBadge({
           defaultLabel: 'Mock Result',
           color: 'var(--ks-color-civic-blue, #1e3a8a)',
           backgroundColor: 'var(--ks-color-civic-blue-light, #dbeafe)',
-          borderColor: '#93c5fd',
+          borderColor: 'var(--ks-color-info-border, #bfdbfe)',
           icon: 'ℹ',
         };
       case 'unavailable':
@@ -52,7 +52,7 @@ export function StatusBadge({
         return {
           defaultLabel: 'Unavailable',
           color: 'var(--ks-color-text-muted, #475569)',
-          backgroundColor: '#f1f5f9',
+          backgroundColor: 'var(--ks-color-surface-page, #f8fafc)',
           borderColor: 'var(--ks-color-border, #cbd5e1)',
           icon: '—',
         };
