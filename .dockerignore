@@ -1,0 +1,8 @@
+node_modules
+**/dist
+apps/web/.next
+.git
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+docs/evidence/*.log

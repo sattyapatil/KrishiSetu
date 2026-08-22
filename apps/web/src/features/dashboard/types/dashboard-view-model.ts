@@ -16,6 +16,23 @@ export interface DashboardFarmerProfile {
   readonly maskedAccount: string;
 }
 
+export interface DashboardLandHolding {
+  readonly ulpinMasked: string;
+  readonly surveyNumber: string;
+  readonly village: string;
+  readonly shareLabel: string;
+  readonly allocatedCultivableHectares: string;
+  readonly encumbrancePresent: boolean;
+}
+
+export interface DashboardCropRecord {
+  readonly code: string;
+  readonly nameKey: string;
+  readonly areaHectares: string;
+  readonly season: string;
+  readonly year: number;
+}
+
 export interface DashboardActionItem {
   readonly id: string;
   readonly priority: 'CRITICAL' | 'HIGH' | 'NORMAL';
@@ -61,6 +78,9 @@ export interface DashboardTechnicalDetails {
 
 export interface DashboardViewModel {
   readonly farmer: DashboardFarmerProfile;
+  readonly landHoldings: readonly DashboardLandHolding[];
+  readonly cropRecords: readonly DashboardCropRecord[];
+  readonly generatedAt: string;
   readonly actionItems: readonly DashboardActionItem[];
   readonly schemes: readonly DashboardSchemeOffering[];
   readonly credit: readonly DashboardCreditOffering[];

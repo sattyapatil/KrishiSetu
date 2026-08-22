@@ -10,6 +10,7 @@ export interface PrototypeSession {
   readonly dashboardConsentScopes: readonly string[];
   readonly selectedOfferingIds: readonly string[];
   readonly activeBundleId?: string;
+  readonly activeConsentId?: string;
   readonly activeWithdrawalReceipt?: PrototypeWithdrawalResult;
 }
 
@@ -70,6 +71,8 @@ export interface PrototypeWithdrawalResult {
 }
 
 export interface PrototypeJourneyAdapter {
+  restoreSession?(): Promise<PrototypeSessionResult>;
+  updatePreferences?(patch: Record<string, unknown>): Promise<void>;
   startSession(personaId: string, pin: string): Promise<PrototypeSessionResult>;
   grantDashboardConsent(input: PrototypeConsentInput | readonly string[]): Promise<PrototypeConsentResult>;
   submitBundle(input: PrototypeBundleInput): Promise<PrototypeBundleResult>;

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@krishisetu/core": "*"
+    ,"@krishisetu/database": "*"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",

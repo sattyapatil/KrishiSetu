@@ -31,13 +31,14 @@ export function AppShell({
   const t = (key: string) => translate(key, locale);
   const pathname = usePathname() || currentPath || `/${locale}`;
   const router = useRouter();
-  const { session, logout } = useJourney();
+  const { session, logout, adapter } = useJourney();
 
   const handleSelectLocale = (newLocale: Locale) => {
     if (onSelectLocale) {
       onSelectLocale(newLocale);
     }
     if (newLocale === locale) return;
+    if (session) void adapter.updatePreferences?.({ locale: newLocale });
     const segments = pathname.split('/');
     if (segments.length > 1) {
       segments[1] = newLocale;
@@ -201,7 +202,8 @@ export function AppShell({
             bottom: 0;
             left: 0;
             right: 0;
-            min-height: 4rem;
+            height: 4.5rem;
+            min-height: 4.5rem;
             background-color: var(--ks-color-surface-card, #ffffff);
             border-top: 1px solid var(--ks-color-border, #cbd5e1);
             display: flex;
@@ -217,7 +219,8 @@ export function AppShell({
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-width: 3.5rem;
+            min-width: 0;
+            width: 25%;
             min-height: 3.5rem;
             padding: 0.25rem;
             text-decoration: none;
@@ -228,9 +231,38 @@ export function AppShell({
             transition: color 0.2s ease;
           }
 
+          .ks-mobile-nav-link span {
+            max-width: 100%;
+            max-height: 2rem;
+            overflow: hidden;
+            line-height: 1rem;
+            text-align: center;
+          }
+
           .ks-mobile-nav-link[aria-current="page"] {
             color: var(--ks-color-civic-blue, #1e3a8a);
             font-weight: 700;
+          }
+        }
+
+        @media (max-width: 479px) {
+          .ks-header-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 0.5rem;
+          }
+
+          .ks-header-actions {
+            width: 100%;
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 0.5rem !important;
+          }
+
+          .ks-header-actions .ks-language-selector,
+          .ks-header-actions select {
+            width: 100%;
+            min-width: 0 !important;
           }
         }
       `}} />
@@ -289,7 +321,7 @@ export function AppShell({
           </Link>
 
           {/* Header Actions (Language, Profile/Logout) */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div className="ks-header-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <LanguageSelector currentLocale={locale} onSelectLocale={handleSelectLocale} />
 
             {isAuthenticated && (
@@ -301,7 +333,7 @@ export function AppShell({
                 }}
                 aria-label={t('navigation.logout')}
                 style={{
-                  minHeight: '2.5rem',
+                  minHeight: '2.75rem',
                   padding: '0.375rem 0.875rem',
                   fontSize: '0.875rem',
                   fontWeight: 600,
@@ -355,7 +387,7 @@ export function AppShell({
           aria-label="Mobile Bottom Navigation"
           className="ks-mobile-bottom-nav"
         >
-          {navLinks.slice(0, 5).map((link) => {
+          {navLinks.slice(0, 4).map((link) => {
             const Icon = link.icon;
             return (
               <Link

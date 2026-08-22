@@ -27,5 +27,7 @@
   "returnHome": "Return to Dashboard",
   "prototypeBadge": "PROTOTYPE",
   "syntheticProvenance": "Synthetic Mock Data",
-  "close": "Close"
+  "close": "Close",
+  "yes": "Yes",
+  "no": "No"
 }

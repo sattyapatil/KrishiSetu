@@ -9,5 +9,16 @@
   "schemesSummary": "पात्र सरकारी सब्सिडी",
   "creditSummary": "पूर्व-योग्य किसान क्रेडिट",
   "applySelected": "समीक्षा करें और आवेदन करें",
-  "selectOfferings": "एक आवेदन में शामिल करने के लिए एक या अधिक योजनाएं चुनें"
+  "selectOfferings": "एक आवेदन में शामिल करने के लिए एक या अधिक योजनाएं चुनें",
+  "workspaceTitle": "आपका कृषि कार्यक्षेत्र",
+  "workspaceSubtitle": "मुख्य रिकॉर्ड, अवसर और आवेदन एक उपयोगी दृश्य में",
+  "metricArea": "कृषि योग्य हिस्सा",
+  "metricCrops": "दर्ज फसलें",
+  "metricOpportunities": "उपलब्ध अवसर",
+  "metricApplications": "जमा आवेदन",
+  "quickActionsTitle": "किसान की सामान्य सेवाएँ",
+  "quickActionsSubtitle": "कृत्रिम भूमि सारांश डाउनलोड करें या अपने नियमित काम जारी रखें",
+  "viewApplications": "आवेदन देखें",
+  "browseSchemes": "योजनाएँ देखें",
+  "generatedAt": "डेटा अपडेट"
 }

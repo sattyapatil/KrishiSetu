@@ -303,7 +303,7 @@ export class InMemoryPrototypeJourneyAdapter implements PrototypeJourneyAdapter 
       receiptId,
       consentId,
       simulatedAt,
-      wording: 'Prototype withdrawal simulated. No real personal data was stored or deleted.',
+      wording: 'Prototype withdrawal completed for derived synthetic state.',
       messageKey: 'privacy.withdrawalSimulatedBody',
       purgedTargets: targets,
       simulatedTargets: targets,

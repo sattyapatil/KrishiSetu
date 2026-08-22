@@ -32,10 +32,10 @@
     "close": "ಮುಚ್ಚಿ"
   },
   "sources": {
-    "MAHADBT_SCHEMES": "ಮಹಾದಿಬಿಟಿ ಯೋಜನಾ ಪೋರ್ಟಲ್",
-    "AGRI_DEPT": "ಕೃಷಿ ಇಲಾಖೆ",
-    "REVENUE_DEPT": "ಕಂದಾಯ ಮತ್ತು ಭೂ ದಾಖಲೆಗಳ ಇಲಾಖೆ",
-    "KRISHISETU_SYSTEM": "ಕೃಷಿಸೇತು ಡಿಜಿಟಲ್ ವ್ಯವಸ್ಥೆ"
+    "MAHADBT_SCHEMES": "ಕೃತಕ ಮಹಾದಿಬಿಟಿ ಸೂಚನೆ ಫೀಡ್",
+    "AGRI_DEPT": "ಕೃತಕ ಕೃಷಿ ಸೂಚನೆ ಫೀಡ್",
+    "REVENUE_DEPT": "ಕೃತಕ ಭೂಮಿ ಸೂಚನೆ ಫೀಡ್",
+    "KRISHISETU_SYSTEM": "ಕೃಷಿಸೇತು ಮಾದರಿ ವ್ಯವಸ್ಥೆ"
   },
   "types": {
     "SCHEME_WINDOW": "ಯೋಜನಾ ಅರ್ಜಿ ಅವಧಿ",

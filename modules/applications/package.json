@@ -9,7 +9,8 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@krishisetu/core": "*"
+    "@krishisetu/core": "*",
+    "@krishisetu/database": "*"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",

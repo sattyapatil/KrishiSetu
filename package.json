@@ -11,7 +11,7 @@
     "tools/*"
   ],
   "scripts": {
-    "dev": "npm run dev:web",
+    "dev": "node tools/development/start-dev.mjs",
     "dev:web": "npm run dev -w apps/web",
     "dev:api": "npm run dev -w apps/api",
     "build": "npm run build --workspaces --if-present",
@@ -20,11 +20,17 @@
     "lint:boundaries": "bash .agents/skills/develop-krishisetu/scripts/validate-foundation.sh",
     "codegen": "tsx tools/codegen/src/index.ts",
     "codegen:check": "tsx tools/codegen/src/check-drift.ts",
-    "test": "tsx --test packages/**/*.test.ts modules/**/*.test.ts tools/**/*.test.ts",
+    "db:migrate": "tsx tools/database/src/index.ts ensure",
+    "db:seed": "tsx tools/database/src/index.ts ensure",
+    "db:reset": "tsx tools/database/src/index.ts reset",
+    "test": "tsx --test packages/**/*.test.ts modules/**/*.test.ts tools/**/*.test.ts apps/**/*.test.ts",
     "test:unit": "tsx --test packages/**/*.test.ts modules/**/*.test.ts",
     "test:architecture": "tsx --test tools/architecture-tests/src/boundary.test.ts",
     "test:locales": "tsx --test tools/architecture-tests/src/locale-completeness.test.ts",
     "test:a11y": "tsx --test packages/design-system/src/*.test.ts",
+    "test:contract": "tsx --test apps/api/src/*.test.ts",
+    "test:integration": "tsx --test packages/database/src/*.test.ts apps/api/src/*.test.ts",
+    "smoke:public": "tsx tools/smoke/src/public-smoke.ts",
     "validate:foundation": "bash .agents/skills/develop-krishisetu/scripts/validate-foundation.sh",
     "validate:fixtures": "tsx tools/architecture-tests/src/validate-fixtures.ts",
     "validate:security": "bash .agents/skills/develop-krishisetu/scripts/validate-foundation.sh"

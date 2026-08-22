@@ -1,7 +1,18 @@
 import type { NextConfig } from 'next';
+import { loadWebBuildConfig } from '@krishisetu/config/env';
+
+const webBuildConfig = loadWebBuildConfig();
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/backend/:path*',
+        destination: `${webBuildConfig.apiBaseUrl}/:path*`,
+      },
+    ];
+  },
   transpilePackages: [
     '@krishisetu/core',
     '@krishisetu/config',
@@ -13,6 +24,8 @@ const nextConfig: NextConfig = {
     '@krishisetu/design-tokens',
     '@krishisetu/design-system',
     '@krishisetu/testing',
+    '@krishisetu/applications',
+    '@krishisetu/dashboard',
   ],
   turbopack: {
     resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
@@ -27,4 +40,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

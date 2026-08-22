@@ -165,7 +165,7 @@ describe('KrishiSetu Complete Interaction Contract & Journey Verification', () =
     assert.ok(receipt.receiptId.startsWith('RCP-PURGE-'));
     assert.equal(
       receipt.wording,
-      'Prototype withdrawal simulated. No real personal data was stored or deleted.'
+      'Prototype withdrawal completed for derived synthetic state.'
     );
     assert.ok(receipt.purgedTargets.length > 0);
     assert.equal(adapter.getActiveSession(), null);

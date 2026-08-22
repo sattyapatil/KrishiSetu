@@ -36,9 +36,22 @@ export const SYNTHETIC_DASHBOARD_FIXTURES: Record<string, DashboardViewModel> = 
       verifiedLand: true,
       verifiedCrops: true,
       bankMapped: true,
-      bankName: 'Bank of Maharashtra',
+      bankName: 'Mock Cooperative Bank',
       maskedAccount: '••••4812',
     },
+    landHoldings: [{
+      ulpinMasked: '••••••••••0128',
+      surveyNumber: '123/1A',
+      village: 'Pashan',
+      shareLabel: '1/2',
+      allocatedCultivableHectares: '0.6750',
+      encumbrancePresent: true,
+    }],
+    cropRecords: [
+      { code: 'SOYBEAN', nameKey: 'crops.soybean', areaHectares: '0.5000', season: 'KHARIF', year: 2026 },
+      { code: 'PIGEON_PEA', nameKey: 'crops.pigeonPea', areaHectares: '0.1750', season: 'KHARIF', year: 2026 },
+    ],
+    generatedAt: '2026-08-22T08:00:00Z',
     actionItems: [
       {
         id: 'act-001',
@@ -103,9 +116,21 @@ export const SYNTHETIC_DASHBOARD_FIXTURES: Record<string, DashboardViewModel> = 
       verifiedLand: true,
       verifiedCrops: true,
       bankMapped: true,
-      bankName: 'State Bank of India',
+      bankName: 'Mock Rural Bank',
       maskedAccount: '••••8923',
     },
+    landHoldings: [{
+      ulpinMasked: '••••••••••0129',
+      surveyNumber: '45/2',
+      village: 'Baramati',
+      shareLabel: '1/1',
+      allocatedCultivableHectares: '1.2000',
+      encumbrancePresent: false,
+    }],
+    cropRecords: [
+      { code: 'SUGARCANE', nameKey: 'crops.sugarcane', areaHectares: '1.2000', season: 'KHARIF', year: 2026 },
+    ],
+    generatedAt: '2026-08-22T08:05:00Z',
     actionItems: [
       {
         id: 'act-002',
@@ -166,9 +191,21 @@ export const SYNTHETIC_DASHBOARD_FIXTURES: Record<string, DashboardViewModel> = 
       verifiedLand: true,
       verifiedCrops: true,
       bankMapped: true,
-      bankName: 'Pune District Central Co-op Bank',
+      bankName: 'Mock District Cooperative Bank',
       maskedAccount: '••••1129',
     },
+    landHoldings: [{
+      ulpinMasked: '••••••••••0130',
+      surveyNumber: '88/4B',
+      village: 'Haveli',
+      shareLabel: '1/1',
+      allocatedCultivableHectares: '0.4500',
+      encumbrancePresent: false,
+    }],
+    cropRecords: [
+      { code: 'SOYBEAN', nameKey: 'crops.soybean', areaHectares: '0.4500', season: 'KHARIF', year: 2026 },
+    ],
+    generatedAt: '2026-08-22T08:10:00Z',
     actionItems: [],
     schemes: [
       {

@@ -30,7 +30,7 @@ export const SYNTHETIC_SCHEMES_CATALOG: readonly SchemeDetailItem[] = [
     requiredScopes: ['LAND_READ', 'CROP_READ', 'SUBSIDY_ELIGIBILITY_READ', 'SUBSIDY_APPLY'],
     guidelines:
       'Capital subsidy for automated drip irrigation installation on cultivable land under PMKSY. 80% subsidy for small and marginal farmers.',
-    providerName: 'Department of Agriculture, Govt of Maharashtra (Simulated MahaDBT)',
+    providerName: 'Mock MahaDBT agricultural benefits adapter',
     prototypeData: true,
   },
   {
@@ -45,7 +45,7 @@ export const SYNTHETIC_SCHEMES_CATALOG: readonly SchemeDetailItem[] = [
     requiredScopes: ['LAND_READ', 'CROP_READ', 'SUBSIDY_ELIGIBILITY_READ', 'SUBSIDY_APPLY'],
     guidelines:
       'Machinery subsidy on tractor-mounted rotary tiller equipment under Sub-Mission on Agricultural Mechanization (SMAM).',
-    providerName: 'Department of Agriculture, Govt of Maharashtra (Simulated MahaDBT)',
+    providerName: 'Mock MahaDBT agricultural benefits adapter',
     prototypeData: true,
   },
   {
@@ -60,7 +60,7 @@ export const SYNTHETIC_SCHEMES_CATALOG: readonly SchemeDetailItem[] = [
     requiredScopes: ['LAND_READ', 'CROP_READ', 'CREDIT_READ', 'CREDIT_PREAPPLY'],
     guidelines:
       'Kisan Credit Card short term crop loan scale of finance limit at 4% effective interest with 3% prompt repayment subvention.',
-    providerName: 'Unified Lending Interface / Bank of Maharashtra (Simulated ULI)',
+    providerName: 'Mock ULI lending adapter',
     prototypeData: true,
   },
 ] as const;

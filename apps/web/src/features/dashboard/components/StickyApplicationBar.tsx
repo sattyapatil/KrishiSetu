@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Locale, translate } from '@krishisetu/i18n';
-import { ArrowRightIcon } from '../../../components/icons.js';
+import { ArrowRightIcon, CloseIcon } from '../../../components/icons.js';
 import { useJourney } from '../../journey/index.js';
 
 export interface StickyApplicationBarProps {
@@ -13,7 +13,7 @@ export interface StickyApplicationBarProps {
 export function StickyApplicationBar({ locale }: StickyApplicationBarProps): React.JSX.Element | null {
   const t = (key: string, params?: Record<string, string | number>) =>
     translate(key, locale, params);
-  const { selectedOfferings } = useJourney();
+  const { selectedOfferings, clearOfferings } = useJourney();
 
   if (selectedOfferings.size === 0) {
     return null;
@@ -22,11 +22,13 @@ export function StickyApplicationBar({ locale }: StickyApplicationBarProps): Rea
   const count = selectedOfferings.size;
 
   return (
-    <div
-      className="ks-sticky-action-bar"
-      style={{
-        position: 'fixed',
-        bottom: '3.75rem', // Sits cleanly above the mobile nav if present, or bottom on desktop
+    <>
+      <style>{`@media (max-width: 767px) { .ks-sticky-action-bar { bottom: 4.5rem !important; } }`}</style>
+      <div
+        className="ks-sticky-action-bar"
+        style={{
+          position: 'fixed',
+          bottom: 0,
         left: 0,
         right: 0,
         backgroundColor: 'var(--ks-color-civic-blue, #1e3a8a)',
@@ -34,8 +36,8 @@ export function StickyApplicationBar({ locale }: StickyApplicationBarProps): Rea
         padding: '0.75rem 1rem',
         boxShadow: '0 -4px 12px rgba(0, 0, 0, 0.15)',
         zIndex: 850,
-      }}
-    >
+        }}
+      >
       <div
         style={{
           maxWidth: 'var(--ks-content-max, 75rem)',
@@ -56,27 +58,49 @@ export function StickyApplicationBar({ locale }: StickyApplicationBarProps): Rea
           </span>
         </div>
 
-        <Link
-          href={`/${locale}/applications/new/review`}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            minHeight: '2.75rem',
-            padding: '0.5rem 1.25rem',
-            backgroundColor: 'var(--ks-color-agri-green, #166534)',
-            color: 'var(--ks-color-surface-card, #ffffff)',
-            borderRadius: '0.375rem',
-            fontWeight: 700,
-            fontSize: '1rem',
-            textDecoration: 'none',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-          }}
-        >
-          <span>{t('schemes.reviewAndApply', { count })}</span>
-          <ArrowRightIcon size={18} aria-hidden={true} />
-        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <button
+            type="button"
+            onClick={clearOfferings}
+            aria-label={t('applications.clearSelection')}
+            style={{
+              minWidth: '2.75rem',
+              minHeight: '2.75rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid currentColor',
+              borderRadius: '0.375rem',
+              background: 'transparent',
+              color: 'inherit',
+              cursor: 'pointer',
+            }}
+          >
+            <CloseIcon size={18} aria-hidden={true} />
+          </button>
+          <Link
+            href={`/${locale}/applications/new/review`}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              minHeight: '2.75rem',
+              padding: '0.5rem 1.25rem',
+              backgroundColor: 'var(--ks-color-agri-green, #166534)',
+              color: 'var(--ks-color-surface-card, #ffffff)',
+              borderRadius: '0.375rem',
+              fontWeight: 700,
+              fontSize: '1rem',
+              textDecoration: 'none',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+            }}
+          >
+            <span>{t('schemes.reviewAndApply', { count })}</span>
+            <ArrowRightIcon size={18} aria-hidden={true} />
+          </Link>
+        </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

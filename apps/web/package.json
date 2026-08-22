@@ -8,6 +8,8 @@
   "dependencies": {
     "@krishisetu/config": "*",
     "@krishisetu/contracts": "*",
+    "@krishisetu/applications": "*",
+    "@krishisetu/dashboard": "*",
     "@krishisetu/core": "*",
     "@krishisetu/design-system": "*",
     "@krishisetu/design-tokens": "*",

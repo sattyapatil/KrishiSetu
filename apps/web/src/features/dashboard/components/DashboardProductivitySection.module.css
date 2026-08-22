@@ -1,0 +1,132 @@
+.section {
+  display: grid;
+  gap: var(--ks-space-4);
+}
+
+.headingRow {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--ks-space-4);
+  flex-wrap: wrap;
+}
+
+.heading {
+  margin: 0;
+  color: var(--ks-color-civic-blue);
+  font-size: var(--ks-font-size-xl);
+  line-height: var(--ks-line-height-xl);
+}
+
+.subtitle,
+.freshness {
+  margin: var(--ks-space-1) 0 0;
+  color: var(--ks-color-text-muted);
+  font-size: var(--ks-font-size-sm);
+  line-height: var(--ks-line-height-sm);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--ks-space-3);
+}
+
+.metric {
+  min-width: 0;
+  padding: var(--ks-space-4);
+  border: var(--ks-border-width) solid var(--ks-color-border);
+  border-radius: var(--ks-radius-lg);
+  background: var(--ks-color-surface-card);
+  box-shadow: var(--ks-shadow-card);
+}
+
+.metricLabel {
+  display: block;
+  color: var(--ks-color-text-muted);
+  font-size: var(--ks-font-size-sm);
+  line-height: var(--ks-line-height-sm);
+}
+
+.metricValue {
+  display: block;
+  margin-top: var(--ks-space-1);
+  color: var(--ks-color-text);
+  font-size: var(--ks-font-size-xl);
+  line-height: var(--ks-line-height-xl);
+}
+
+.actionsCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ks-space-4);
+  align-items: center;
+  padding: var(--ks-space-4);
+  border: var(--ks-border-width) solid var(--ks-color-border);
+  border-radius: var(--ks-radius-lg);
+  background: var(--ks-color-civic-blue-light);
+}
+
+.actionsTitle {
+  margin: 0;
+  color: var(--ks-color-civic-blue-dark);
+  font-size: var(--ks-font-size-lg);
+  line-height: var(--ks-line-height-lg);
+}
+
+.actions {
+  display: flex;
+  gap: var(--ks-space-2);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.action,
+.downloadButton {
+  min-height: var(--ks-touch-comfortable);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ks-space-2);
+  padding: var(--ks-space-2) var(--ks-space-4);
+  border: var(--ks-border-width-strong) solid var(--ks-color-civic-blue);
+  border-radius: var(--ks-radius-md);
+  background: var(--ks-color-surface-card);
+  color: var(--ks-color-civic-blue);
+  font: inherit;
+  font-weight: var(--ks-font-weight-bold);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.action:focus-visible,
+.downloadButton:focus-visible {
+  outline: var(--ks-focus-outline);
+  outline-offset: var(--ks-focus-offset);
+}
+
+@media (max-width: 52rem) {
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .actionsCard {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 30rem) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .actions,
+  .action,
+  .downloadButton {
+    width: 100%;
+  }
+}

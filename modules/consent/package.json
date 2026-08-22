@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@krishisetu/core": "*",
+    "@krishisetu/database": "*",
     "@krishisetu/policy": "*"
   },
   "scripts": {

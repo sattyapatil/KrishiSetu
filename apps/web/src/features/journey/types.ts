@@ -1,1 +1,11 @@
-export * from '@krishisetu/testing';
+export type {
+  PrototypeScenario,
+  PrototypeSession,
+  PrototypeSessionResult,
+  PrototypeConsentInput,
+  PrototypeConsentResult,
+  PrototypeBundleInput,
+  PrototypeBundleResult,
+  PrototypeWithdrawalResult,
+  PrototypeJourneyAdapter,
+} from '@krishisetu/testing';

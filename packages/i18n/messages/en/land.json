@@ -12,5 +12,9 @@
   "encumbrance": "Encumbrance / Existing Loan",
   "encumbrancePresent": "Active Bank Encumbrance",
   "noEncumbrance": "No Encumbrance Recorded",
-  "sourceMahabhumi": "Mock Mahabhumi (7/12 Record)"
+  "sourceMahabhumi": "Mock Mahabhumi (7/12 Record)",
+  "holding": "Land holding",
+  "downloadSyntheticExtract": "Download synthetic 7/12 summary",
+  "syntheticExtractTitle": "KrishiSetu synthetic 7/12 summary",
+  "syntheticExtractNotice": "DEMO ONLY — fictional, masked data; not a digitally signed or official land record."
 }

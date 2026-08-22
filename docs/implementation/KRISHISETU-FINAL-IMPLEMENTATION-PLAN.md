@@ -1,5 +1,7 @@
 # KrishiSetu Final Implementation Plan
 
+> Implementation checkpoint (August 22, 2026): prototype phases 0–13 are implemented to the boundaries recorded in [Implementation Progress](IMPLEMENTATION-PROGRESS.md) and [Implementation Evidence](../evidence/IMPLEMENTATION-EVIDENCE-2026-08-22.md). Phase 14 remains an explicit production-evolution fitness exercise, not prototype functionality.
+
 **Planning style:** dependency-ordered phases, not calendar dates  
 **Architecture authority:** `docs/architecture/KRISHISETU-MODULAR-FOUNDATION-ARCHITECTURE.md`  
 **Delivery rule:** complete and verify each phase’s exit gate before building dependent feature behavior
@@ -748,4 +750,3 @@ npm run smoke:public
 ```
 
 The implementation is ready to begin when Phases 0–2 are accepted. Feature development should not start before the registries, contracts, and enforcement pipeline exist; otherwise the hardcoding and duplication this architecture is designed to prevent will already be embedded in the foundation.
-

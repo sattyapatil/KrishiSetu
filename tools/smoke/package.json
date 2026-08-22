@@ -1,0 +1,14 @@
+{
+  "name": "@krishisetu/smoke",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public unauthenticated KrishiSetu smoke checks",
+  "type": "module",
+  "dependencies": {
+    "@krishisetu/api": "*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  }
+}

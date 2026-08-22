@@ -9,5 +9,16 @@
   "schemesSummary": "Eligible Government Subsidies",
   "creditSummary": "Pre-qualified Kisan Credit",
   "applySelected": "Review & Apply Selected",
-  "selectOfferings": "Select one or more programs to bundle into an application"
+  "selectOfferings": "Select one or more programs to bundle into an application",
+  "workspaceTitle": "Your Farm Workspace",
+  "workspaceSubtitle": "Key records, opportunities, and applications in one practical view",
+  "metricArea": "Cultivable share",
+  "metricCrops": "Recorded crops",
+  "metricOpportunities": "Available opportunities",
+  "metricApplications": "Submitted applications",
+  "quickActionsTitle": "Common farmer services",
+  "quickActionsSubtitle": "Download a synthetic land summary or continue with your regular tasks",
+  "viewApplications": "View applications",
+  "browseSchemes": "Browse schemes",
+  "generatedAt": "Data updated"
 }

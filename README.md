@@ -49,10 +49,13 @@ krishisetu/
 │   ├── design-system/     # Accessible, stateless UI components (UX4G/GIGW-aligned)
 │   ├── observability/     # Structured logging and redaction
 │   ├── testing/           # Synthetic fixture harnesses & test helpers
+│   ├── database/          # SQLite adapter, transactions, and migration checksums
 │   ├── eslint-config/     # Workspace ESLint boundary rules
 │   └── tsconfig/          # Shared TypeScript base configs
 └── tools/
     ├── codegen/           # Token & message-key generators
+    ├── database/          # Safe migrate/seed/reset commands
+    ├── smoke/             # Public API smoke checks
     └── architecture-tests/# Boundary and dependency tests
 ```
 
@@ -87,10 +90,11 @@ npm run codegen
 # Verify codegen drift
 npm run codegen:check
 
-# Start the Next.js citizen frontend application (http://localhost:3000)
-npm run dev:web
+# Start the complete demo: web on 3000 and API on 3001
+npm run dev
 
-# Start the Fastify API Gateway in a separate terminal (http://localhost:3001)
+# Optional: run either service independently for debugging
+npm run dev:web
 npm run dev:api
 
 # Typecheck all packages
@@ -99,8 +103,15 @@ npm run typecheck
 # Lint workspace and boundary rules
 npm run lint
 
-# Run all 50 unit and boundary tests
+# Run all unit, integration, contract, and boundary tests
 npm test
+
+# Create/verify the checksum-protected synthetic SQLite database
+npm run db:migrate
+
+# Run API contract and public surface checks
+npm run test:contract
+npm run smoke:public
 
 # Run foundation validation
 npm run validate:foundation
@@ -110,10 +121,10 @@ npm run validate:foundation
 
 ## 5. Documentation
 
-- [Implementation Progress](file:///Users/satishpophale/satish/work/IT/Hackathon/KrishiSetu/docs/implementation/IMPLEMENTATION-PROGRESS.md)
-- [Architecture & Modular Monolith](file:///Users/satishpophale/satish/work/IT/Hackathon/KrishiSetu/docs/architecture/KRISHISETU-MODULAR-FOUNDATION-ARCHITECTURE.md)
-- [API Contracts & Data Flows](file:///Users/satishpophale/satish/work/IT/Hackathon/KrishiSetu/docs/architecture/API-CONTRACT-AND-DATA-FLOWS.md)
-- [Security, Privacy & Threat Model](file:///Users/satishpophale/satish/work/IT/Hackathon/KrishiSetu/docs/architecture/SECURITY-PRIVACY-AND-THREAT-MODEL.md)
-- [Brand & Accessible UI System](file:///Users/satishpophale/satish/work/IT/Hackathon/KrishiSetu/docs/design-system/KRISHISETU-BRAND-AND-UI-DESIGN-SYSTEM.md)
-- [Architecture Decision Log](file:///Users/satishpophale/satish/work/IT/Hackathon/KrishiSetu/docs/decisions/decision-log.md)
-
+- [Implementation Progress](docs/implementation/IMPLEMENTATION-PROGRESS.md)
+- [Implementation Evidence](docs/evidence/IMPLEMENTATION-EVIDENCE-2026-08-22.md)
+- [Architecture & Modular Monolith](docs/architecture/KRISHISETU-MODULAR-FOUNDATION-ARCHITECTURE.md)
+- [API Contracts & Data Flows](docs/architecture/API-CONTRACT-AND-DATA-FLOWS.md)
+- [Security, Privacy & Threat Model](docs/architecture/SECURITY-PRIVACY-AND-THREAT-MODEL.md)
+- [Brand & Accessible UI System](docs/design-system/KRISHISETU-BRAND-AND-UI-DESIGN-SYSTEM.md)
+- [Architecture Decision Log](docs/decisions/decision-log.md)

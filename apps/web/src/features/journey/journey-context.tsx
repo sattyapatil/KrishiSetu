@@ -11,6 +11,7 @@ import {
   PrototypeScenario,
 } from './types.js';
 import { defaultPrototypeAdapter } from './prototype-journey-adapter.js';
+import type { CompositeDashboardModel } from '@krishisetu/dashboard';
 
 interface JourneyContextValue {
   session: PrototypeSession | null;
@@ -24,7 +25,8 @@ interface JourneyContextValue {
   submitBundle: (
     declarationConfirmed: boolean,
     scopes: string[],
-    scenario?: PrototypeScenario
+    scenario?: PrototypeScenario,
+    offeringIds?: readonly string[]
   ) => Promise<PrototypeBundleResult>;
   retryChild: (bundleId: string, childId: string) => Promise<PrototypeBundleResult>;
   simulateWithdrawal: (consentId: string) => Promise<PrototypeWithdrawalResult>;
@@ -33,6 +35,7 @@ interface JourneyContextValue {
   reducedMotion: boolean;
   setReducedMotion: (val: boolean) => void;
   logout: () => void;
+  dashboardSnapshot: CompositeDashboardModel | null;
 }
 
 const JourneyContext = createContext<JourneyContextValue | undefined>(undefined);
@@ -48,6 +51,37 @@ export function JourneyProvider({
   const [selectedOfferings, setSelectedOfferings] = useState<Set<string>>(new Set());
   const [highContrast, setHighContrastState] = useState<boolean>(false);
   const [reducedMotion, setReducedMotionState] = useState<boolean>(false);
+  const [dashboardSnapshot, setDashboardSnapshot] = useState<CompositeDashboardModel | null>(null);
+
+  useEffect(() => {
+    try {
+      const stored = window.sessionStorage.getItem('ks_selected_offerings');
+      if (stored) {
+        const parsed = JSON.parse(stored) as unknown;
+        if (Array.isArray(parsed) && parsed.every((item) => typeof item === 'string')) {
+          setSelectedOfferings(new Set(parsed));
+        }
+      }
+    } catch {
+      // Selection persistence is an optional browser convenience.
+    }
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    if (!adapter.restoreSession) return () => { active = false; };
+    void adapter.restoreSession().then((result) => {
+      if (!active || !result.success || !result.session) return;
+      setSession((current) => current ?? result.session ?? null);
+      const apiAdapter = adapter as PrototypeJourneyAdapter & {
+        getDashboardSnapshot?: () => Record<string, unknown> | null;
+      };
+      setDashboardSnapshot(
+        (apiAdapter.getDashboardSnapshot?.() as unknown as CompositeDashboardModel | null) ?? null
+      );
+    });
+    return () => { active = false; };
+  }, [adapter]);
 
   // Load accessibility preferences from sessionStorage if available in browser
   useEffect(() => {
@@ -80,7 +114,8 @@ export function JourneyProvider({
     } catch {
       // ignore storage errors
     }
-  }, []);
+    void adapter.updatePreferences?.({ highContrast: val });
+  }, [adapter]);
 
   const setReducedMotion = useCallback((val: boolean) => {
     setReducedMotionState(val);
@@ -95,7 +130,8 @@ export function JourneyProvider({
     } catch {
       // ignore storage errors
     }
-  }, []);
+    void adapter.updatePreferences?.({ reducedMotion: val });
+  }, [adapter]);
 
   const toggleOffering = useCallback((offeringId: string) => {
     setSelectedOfferings((prev) => {
@@ -105,16 +141,25 @@ export function JourneyProvider({
       } else {
         next.add(offeringId);
       }
+      try {
+        window.sessionStorage.setItem('ks_selected_offerings', JSON.stringify([...next]));
+      } catch {
+        // Ignore storage errors; in-memory selection still works.
+      }
       return next;
     });
   }, []);
 
   const clearOfferings = useCallback(() => {
     setSelectedOfferings(new Set());
+    try { window.sessionStorage.removeItem('ks_selected_offerings'); } catch {}
   }, []);
 
   const setOfferings = useCallback((offerings: string[]) => {
     setSelectedOfferings(new Set(offerings));
+    try {
+      window.sessionStorage.setItem('ks_selected_offerings', JSON.stringify(offerings));
+    } catch {}
   }, []);
 
   const startSession = useCallback(
@@ -123,6 +168,10 @@ export function JourneyProvider({
       if (res.success && res.session) {
         setSession(res.session);
         setSelectedOfferings(new Set());
+        try {
+          window.sessionStorage.removeItem('ks_selected_offerings');
+          window.sessionStorage.removeItem('ks_application_draft');
+        } catch {}
       }
       return res;
     },
@@ -137,19 +186,27 @@ export function JourneyProvider({
         grantedScopes: scopes,
         purpose: 'DASHBOARD_VIEW',
       });
+      const apiAdapter = adapter as PrototypeJourneyAdapter & {
+        getDashboardSnapshot?: () => Record<string, unknown> | null;
+      };
+      setDashboardSnapshot(
+        (apiAdapter.getDashboardSnapshot?.() as unknown as CompositeDashboardModel | null) ?? null
+      );
       setSession((prev) =>
         prev
           ? {
               ...prev,
               dashboardConsentGranted: true,
-              dashboardConsentScopes: scopes,
+              dashboardConsentScopes: res.scopes,
+              activeConsentId: res.consentId,
             }
           : {
               farmerId,
               farmerName: 'Namdev Tukaram Shinde',
               sessionStartedAt: res.grantedAt,
               dashboardConsentGranted: true,
-              dashboardConsentScopes: scopes,
+              dashboardConsentScopes: res.scopes,
+              activeConsentId: res.consentId,
               selectedOfferingIds: [],
             }
       );
@@ -162,10 +219,11 @@ export function JourneyProvider({
     async (
       declarationConfirmed: boolean,
       scopes: string[],
-      scenario?: PrototypeScenario
+      scenario?: PrototypeScenario,
+      offeringIds?: readonly string[]
     ): Promise<PrototypeBundleResult> => {
       const farmerId = session?.farmerId ?? '27202600000001';
-      const offerings = Array.from(selectedOfferings);
+      const offerings = offeringIds ? [...offeringIds] : Array.from(selectedOfferings);
       const res = await adapter.submitBundle({
         farmerId,
         selectedOfferingIds: offerings,
@@ -182,6 +240,11 @@ export function JourneyProvider({
               }
             : null
         );
+        setSelectedOfferings(new Set());
+        try {
+          window.sessionStorage.removeItem('ks_selected_offerings');
+          window.sessionStorage.removeItem('ks_application_draft');
+        } catch {}
       }
       return res;
     },
@@ -198,6 +261,9 @@ export function JourneyProvider({
   const simulateWithdrawal = useCallback(
     async (consentId: string): Promise<PrototypeWithdrawalResult> => {
       const res = await adapter.simulateWithdrawal(consentId);
+      try {
+        window.sessionStorage.setItem('ks_withdrawal_receipt', JSON.stringify(res));
+      } catch {}
       setSession((prev) =>
         prev
           ? {
@@ -208,6 +274,11 @@ export function JourneyProvider({
           : null
       );
       setSelectedOfferings(new Set());
+      try {
+        window.sessionStorage.removeItem('ks_selected_offerings');
+        window.sessionStorage.removeItem('ks_application_draft');
+      } catch {}
+      setDashboardSnapshot(null);
       return res;
     },
     [adapter]
@@ -217,6 +288,11 @@ export function JourneyProvider({
     adapter.resetSession();
     setSession(null);
     setSelectedOfferings(new Set());
+    setDashboardSnapshot(null);
+    try {
+      window.sessionStorage.removeItem('ks_selected_offerings');
+      window.sessionStorage.removeItem('ks_application_draft');
+    } catch {}
   }, [adapter]);
 
   const value = useMemo(
@@ -237,6 +313,7 @@ export function JourneyProvider({
       reducedMotion,
       setReducedMotion,
       logout,
+      dashboardSnapshot,
     }),
     [
       session,
@@ -255,6 +332,7 @@ export function JourneyProvider({
       reducedMotion,
       setReducedMotion,
       logout,
+      dashboardSnapshot,
     ]
   );
 

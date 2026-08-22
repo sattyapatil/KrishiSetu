@@ -12,6 +12,7 @@ import { DashboardWeatherSection } from './components/DashboardWeatherSection.js
 import { DashboardNoticesSection } from './components/DashboardNoticesSection.js';
 import { DashboardTechnicalSection } from './components/DashboardTechnicalSection.js';
 import { StickyApplicationBar } from './components/StickyApplicationBar.js';
+import { DashboardProductivitySection } from './components/DashboardProductivitySection.js';
 
 export interface DashboardViewProps {
   readonly locale: Locale;
@@ -38,6 +39,8 @@ export function DashboardView({
         farmer={vm.farmer}
         noticeCount={activeNotices.length}
       />
+
+      <DashboardProductivitySection locale={locale} viewModel={vm} />
 
       {/* 2. Urgent Attention Items */}
       <DashboardAttentionSection

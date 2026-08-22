@@ -93,8 +93,8 @@ export function LoginView({
               <LockIcon size={24} aria-hidden={true} />
             </div>
             <div>
-              <strong style={{ display: 'block', fontSize: '1rem', marginBottom: '0.25rem' }}>Secure & DPDP Compliant</strong>
-              <span style={{ fontSize: '0.875rem', opacity: 0.85 }}>Simulated privacy-first architecture protecting your data footprint.</span>
+              <strong style={{ display: 'block', fontSize: '1rem', marginBottom: '0.25rem' }}>Privacy-first demo design</strong>
+              <span style={{ fontSize: '0.875rem', opacity: 0.85 }}>Consent and minimisation patterns demonstrated with fictional records only.</span>
             </div>
           </div>
 
@@ -103,8 +103,8 @@ export function LoginView({
               <UserIcon size={24} aria-hidden={true} />
             </div>
             <div>
-              <strong style={{ display: 'block', fontSize: '1rem', marginBottom: '0.25rem' }}>Unified Farmer Identity</strong>
-              <span style={{ fontSize: '0.875rem', opacity: 0.85 }}>Single-sign-on integration across all state agricultural nodes.</span>
+              <strong style={{ display: 'block', fontSize: '1rem', marginBottom: '0.25rem' }}>Synthetic farmer identity</strong>
+              <span style={{ fontSize: '0.875rem', opacity: 0.85 }}>One fictional demo identity across this prototype experience.</span>
             </div>
           </div>
 

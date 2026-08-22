@@ -12,5 +12,9 @@
   "encumbrance": "ऋणभार / मौजूदा ऋण",
   "encumbrancePresent": "सक्रिय बैंक ऋणभार",
   "noEncumbrance": "कोई ऋणभार दर्ज नहीं",
-  "sourceMahabhumi": "मॉक महाभूमि (7/12 रिकॉर्ड)"
+  "sourceMahabhumi": "मॉक महाभूमि (7/12 रिकॉर्ड)",
+  "holding": "भूमि जोत",
+  "downloadSyntheticExtract": "कृत्रिम 7/12 सारांश डाउनलोड करें",
+  "syntheticExtractTitle": "कृषिसेतु कृत्रिम 7/12 सारांश",
+  "syntheticExtractNotice": "केवल डेमो — काल्पनिक और आंशिक रूप से छिपा डेटा; यह डिजिटल हस्ताक्षरित या आधिकारिक भूमि रिकॉर्ड नहीं है।"
 }

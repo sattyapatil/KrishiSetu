@@ -12,5 +12,9 @@
   "encumbrance": "ಸಾಲದ ಹೊರೆ / ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಸಾಲ",
   "encumbrancePresent": "ಸಕ್ರಿಯ ಬ್ಯಾಂಕ್ ಸಾಲದ ಹೊರೆ",
   "noEncumbrance": "ಯಾವುದೇ ಸಾಲದ ಹೊರೆ ದಾಖಲಾಗಿಲ್ಲ",
-  "sourceMahabhumi": "ಮಾದರಿ ಮಹಾಭೂಮಿ (7/12 ದಾಖಲೆ)"
+  "sourceMahabhumi": "ಮಾದರಿ ಮಹಾಭೂಮಿ (7/12 ದಾಖಲೆ)",
+  "holding": "ಭೂ ಹಿಡುವಳಿ",
+  "downloadSyntheticExtract": "ಕೃತಕ 7/12 ಸಾರಾಂಶ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
+  "syntheticExtractTitle": "ಕೃಷಿಸೇತು ಕೃತಕ 7/12 ಸಾರಾಂಶ",
+  "syntheticExtractNotice": "ಡೆಮೊ ಮಾತ್ರ — ಕಾಲ್ಪನಿಕ ಮತ್ತು ಭಾಗಶಃ ಮರೆಮಾಡಿದ ಡೇಟಾ; ಇದು ಡಿಜಿಟಲ್ ಸಹಿಯ ಅಥವಾ ಅಧಿಕೃತ ಭೂ ದಾಖಲೆ ಅಲ್ಲ."
 }

@@ -22,6 +22,7 @@
       "@krishisetu/design-tokens/css": ["packages/design-tokens/generated/krishisetu.tokens.css"],
       "@krishisetu/design-system": ["packages/design-system/src/index.ts"],
       "@krishisetu/observability": ["packages/observability/src/index.ts"],
+      "@krishisetu/database": ["packages/database/src/index.ts"],
       "@krishisetu/testing": ["packages/testing/src/index.ts"]
     }
   },

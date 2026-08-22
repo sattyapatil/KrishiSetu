@@ -25,7 +25,7 @@ export function DashboardReadinessSection({
           margin: '0 0 0.75rem 0',
         }}
       >
-        Verified Agricultural Readiness
+        {t('dashboard.overallStatus')}
       </h2>
 
       <div
@@ -54,7 +54,7 @@ export function DashboardReadinessSection({
             {formatHectares(farmer.landHoldingsHectares, locale)}
           </p>
           <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--ks-color-text-muted, #475569)' }}>
-            {t('schemes.sourceMahadbt')}: Mahabhumi 7/12 (Survey 123/1A)
+            {t('land.sourceMahabhumi')} • Survey 123/1A
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export function DashboardReadinessSection({
             {farmer.cropCount} Kharif Crops
           </p>
           <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--ks-color-text-muted, #475569)' }}>
-            Soybean & Tur recorded in Digital Crop Survey
+            {t('crops.sourceCropRegistry')}
           </p>
         </div>
 
@@ -92,15 +92,15 @@ export function DashboardReadinessSection({
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
             <span style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--ks-color-text-muted, #475569)' }}>
-              Bank Readiness
+              {t('credit.bankReadiness')}
             </span>
-            <StatusBadge status={farmer.bankMapped ? 'ready' : 'needsAction'} label="DBT Active" />
+            <StatusBadge status={farmer.bankMapped ? 'ready' : 'needsAction'} label={t('credit.bankReady')} />
           </div>
           <p style={{ margin: '0 0 0.25rem 0', fontSize: '1.125rem', fontWeight: 700, color: 'var(--ks-color-text, #0f172a)' }}>
             {farmer.bankName}
           </p>
           <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--ks-color-text-muted, #475569)' }}>
-            Masked A/C: {farmer.maskedAccount} (Aadhaar Seeding Verified)
+            {t('common.mockResult')}: {farmer.maskedAccount}
           </p>
         </div>
       </div>

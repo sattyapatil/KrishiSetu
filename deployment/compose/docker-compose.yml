@@ -1,0 +1,38 @@
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.api
+    environment:
+      NODE_ENV: development
+      HOST: 0.0.0.0
+      PORT: 3001
+      WEB_ORIGIN: http://localhost:3000
+      DATABASE_PATH: /data/krishisetu.sqlite
+      PROTOTYPE_MODE: "true"
+    ports:
+      - "3001:3001"
+    volumes:
+      - krishisetu-data:/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3001/health/ready"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  web:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.web
+      args:
+        API_BASE_URL: http://api:3001
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://api:3001
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  krishisetu-data:

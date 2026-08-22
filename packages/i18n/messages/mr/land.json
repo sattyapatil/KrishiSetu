@@ -12,5 +12,9 @@
   "encumbrance": "बोजा / विद्यमान कर्ज",
   "encumbrancePresent": "सक्रिय बँक बोजा",
   "noEncumbrance": "कोणताही बोजा नोंदवलेला नाही",
-  "sourceMahabhumi": "मॉक महाभूमी (७/१२ उतारा)"
+  "sourceMahabhumi": "मॉक महाभूमी (७/१२ उतारा)",
+  "holding": "जमीन धारणा",
+  "downloadSyntheticExtract": "कृत्रिम ७/१२ सारांश डाउनलोड करा",
+  "syntheticExtractTitle": "कृषीसेतू कृत्रिम ७/१२ सारांश",
+  "syntheticExtractNotice": "फक्त डेमो — काल्पनिक आणि अंशतः लपवलेला डेटा; ही डिजिटल स्वाक्षरीत किंवा अधिकृत जमीन नोंद नाही."
 }

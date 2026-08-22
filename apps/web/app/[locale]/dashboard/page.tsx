@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { DashboardView } from '../../../src/features/dashboard/DashboardView.js';
 import { AccessRequiredView } from '../../../src/components/AccessRequiredView.js';
 import { useJourney } from '../../../src/features/journey/index.js';
+import { mapDashboardApiToViewModel } from '../../../src/features/dashboard/dashboard-api-mapper.js';
 
 export default function DashboardPage({
   params,
@@ -20,11 +21,20 @@ export default function DashboardPage({
   }
 
   const locale = rawLocale as Locale;
-  const { session } = useJourney();
+  const { session, dashboardSnapshot } = useJourney();
 
   if (!session || !session.dashboardConsentGranted) {
     return <AccessRequiredView locale={locale} />;
   }
 
-  return <DashboardView locale={locale} farmerId={session.farmerId} />;
+  const viewModel = dashboardSnapshot
+    ? mapDashboardApiToViewModel({
+        model: dashboardSnapshot,
+        farmerId: session.farmerId,
+        locale,
+        activeScopes: session.dashboardConsentScopes,
+      })
+    : undefined;
+
+  return <DashboardView locale={locale} farmerId={session.farmerId} viewModel={viewModel} />;
 }

@@ -27,5 +27,7 @@
   "returnHome": "डैशबोर्ड पर वापस जाएं",
   "prototypeBadge": "प्रोटोटाइप",
   "syntheticProvenance": "सिंथेटिक मॉक डेटा",
-  "close": "बंद करें"
+  "close": "बंद करें",
+  "yes": "हाँ",
+  "no": "नहीं"
 }

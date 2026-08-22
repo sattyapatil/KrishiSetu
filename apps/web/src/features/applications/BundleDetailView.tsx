@@ -100,8 +100,8 @@ export function BundleDetailView({
               }
               subtitle={
                 child.domain === 'MAHADBT'
-                  ? 'Department of Agriculture, Government of Maharashtra (Simulated)'
-                  : 'Unified Lending Interface / Bank of Maharashtra (Simulated)'
+                  ? 'Mock agricultural benefits adapter'
+                  : 'Mock ULI lending adapter'
               }
               footerSlot={
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>

@@ -27,7 +27,7 @@ export function PrivacyView({ locale }: PrivacyViewProps): React.JSX.Element {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const withdrawButtonRef = useRef<HTMLButtonElement>(null);
 
-  const consentId = `CNS-2026-${(session?.farmerId || '27202600000001').slice(-4)}`;
+  const consentId = session?.activeConsentId ?? 'CONSENT_NOT_AVAILABLE';
   const hasActiveConsent = Boolean(session?.dashboardConsentGranted);
 
   const handleOpenDialog = () => {

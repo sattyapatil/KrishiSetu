@@ -48,7 +48,7 @@ export function ApplicationsView({
       {/* Child 1: MahaDBT Micro-Irrigation */}
       <Card
         title={t('applications.childMahaDbtTitle')}
-        subtitle="Department of Agriculture, Government of Maharashtra (Simulated)"
+        subtitle="Mock agricultural benefits adapter"
         footerSlot={
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.875rem' }}>
             <span><strong>{t('applications.providerReceipt')}:</strong> MOCK-MDBT-332101</span>
@@ -67,7 +67,7 @@ export function ApplicationsView({
       {/* Child 2: ULI Kisan Credit Card */}
       <Card
         title={t('applications.childUliTitle')}
-        subtitle="Unified Lending Interface / Bank of Maharashtra (Simulated)"
+        subtitle="Mock ULI lending adapter"
         footerSlot={
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.875rem' }}>
             <span>

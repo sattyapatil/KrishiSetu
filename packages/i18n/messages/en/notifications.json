@@ -32,10 +32,10 @@
     "close": "Close"
   },
   "sources": {
-    "MAHADBT_SCHEMES": "MahaDBT Schemes Portal",
-    "AGRI_DEPT": "Department of Agriculture",
-    "REVENUE_DEPT": "Revenue & Land Department",
-    "KRISHISETU_SYSTEM": "KrishiSetu Platform System"
+    "MAHADBT_SCHEMES": "Synthetic MahaDBT Notice Feed",
+    "AGRI_DEPT": "Synthetic Agriculture Notice Feed",
+    "REVENUE_DEPT": "Synthetic Land Notice Feed",
+    "KRISHISETU_SYSTEM": "KrishiSetu Prototype System"
   },
   "types": {
     "SCHEME_WINDOW": "Scheme Window",

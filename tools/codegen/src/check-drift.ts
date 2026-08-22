@@ -3,6 +3,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { generateTokensCss } from './generate-tokens.js';
 import { generateMessageKeys } from './generate-message-keys.js';
+import { generateApiClient } from './generate-api-client.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,6 +22,20 @@ export function checkDrift(): boolean {
     const currentTokensCss = fs.readFileSync(tokensCssPath, 'utf8');
     if (currentTokensCss.trim() !== expectedTokensCss.trim()) {
       console.error('FAIL: Drift detected in packages/design-tokens/generated/krishisetu.tokens.css');
+      hasDrift = true;
+    }
+  }
+
+  // 3. Check generated web API client drift
+  const expectedApiClient = generateApiClient();
+  const apiClientPath = path.join(rootDir, 'apps/web/src/generated/api-client.ts');
+  if (!fs.existsSync(apiClientPath)) {
+    console.error('FAIL: apps/web/src/generated/api-client.ts is missing.');
+    hasDrift = true;
+  } else {
+    const currentApiClient = fs.readFileSync(apiClientPath, 'utf8');
+    if (currentApiClient.trim() !== expectedApiClient.trim()) {
+      console.error('FAIL: Drift detected in apps/web/src/generated/api-client.ts');
       hasDrift = true;
     }
   }

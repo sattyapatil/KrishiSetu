@@ -217,9 +217,9 @@ export function DashboardApplicationsSection({
                     marginBottom: '0.5rem',
                   }}
                 >
-                  <StatusBadge status="ready" label="Pre-Qualified" />
+                  <StatusBadge status="ready" label={t('credit.prequalifiedMock')} />
                   <span style={{ fontSize: '0.75rem', color: 'var(--ks-color-text-muted, #475569)' }}>
-                    Mock ULI / Bank of Maharashtra
+                    {t('credit.sourceUli')}
                   </span>
                 </div>
 
@@ -239,7 +239,7 @@ export function DashboardApplicationsSection({
                   }}
                 >
                   <span style={{ fontSize: '0.75rem', color: 'var(--ks-color-text-muted, #475569)', display: 'block' }}>
-                    Indicative Scale of Finance Limit
+                    {t('credit.estimatedLimit')}
                   </span>
                   <span style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--ks-color-civic-blue, #1e3a8a)' }}>
                     {formatCurrencyFromPaise(item.estimatedLimitPaise, locale)}

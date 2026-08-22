@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Locale, translate } from '@krishisetu/i18n';
 import { Button, Card, Checkbox, Alert, StatusBadge } from '@krishisetu/design-system';
 import { useJourney } from '../journey/index.js';
+import { consentPurposes } from '@krishisetu/policy';
 import { LockIcon, UserIcon, SchemesIcon, InfoIcon } from '../../components/icons.js';
 
 export interface ConsentViewProps {
@@ -23,15 +24,15 @@ export function ConsentView({
   const t = (key: string) => translate(key, locale);
   const { grantDashboardConsent } = useJourney();
 
-  // Non-preselected optional scopes: Required are IDENTITY_READ and LAND_READ; others begin unchecked!
+  const requiredDashboardScopes = consentPurposes.DASHBOARD_VIEW.requiredScopes;
   const [selectedScopes, setSelectedScopes] = useState<Set<string>>(
-    new Set(['IDENTITY_READ', 'LAND_READ'])
+    new Set(requiredDashboardScopes)
   );
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const toggleScope = (scopeKey: string) => {
-    if (scopeKey === 'IDENTITY_READ' || scopeKey === 'LAND_READ') {
-      return; // Required for dashboard
+    if (requiredDashboardScopes.includes(scopeKey as never)) {
+      return;
     }
     setSelectedScopes((prev) => {
       const next = new Set(prev);
@@ -181,9 +182,9 @@ export function ConsentView({
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--ks-color-border, #cbd5e1)' }}>
               <span style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--ks-color-text, #0f172a)' }}>
-                Optional Value-Added Scopes
+                {t('consent.scopesTitle')}
               </span>
-              <StatusBadge status="mockResult" label="Optional" />
+              <StatusBadge status="ready" label="Required" />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
@@ -193,6 +194,7 @@ export function ConsentView({
                   label={t('consent.scopes.cropRead.label')}
                   description={t('consent.scopes.cropRead.description')}
                   checked={selectedScopes.has('CROP_READ')}
+                  disabled
                   onChange={() => toggleScope('CROP_READ')}
                 />
               </div>
@@ -203,6 +205,7 @@ export function ConsentView({
                   label={t('consent.scopes.bankStatusRead.label')}
                   description={t('consent.scopes.bankStatusRead.description')}
                   checked={selectedScopes.has('BANK_STATUS_READ')}
+                  disabled
                   onChange={() => toggleScope('BANK_STATUS_READ')}
                 />
               </div>
@@ -213,6 +216,7 @@ export function ConsentView({
                   label={t('consent.scopes.subsidyEligibilityRead.label')}
                   description={t('consent.scopes.subsidyEligibilityRead.description')}
                   checked={selectedScopes.has('SUBSIDY_ELIGIBILITY_READ')}
+                  disabled
                   onChange={() => toggleScope('SUBSIDY_ELIGIBILITY_READ')}
                 />
               </div>
@@ -223,6 +227,7 @@ export function ConsentView({
                   label={t('consent.scopes.creditRead.label')}
                   description={t('consent.scopes.creditRead.description')}
                   checked={selectedScopes.has('CREDIT_READ')}
+                  disabled
                   onChange={() => toggleScope('CREDIT_READ')}
                 />
               </div>
