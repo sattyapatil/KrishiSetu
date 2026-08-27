@@ -57,7 +57,7 @@ export function PublicHomeView({
         onOpenModal={handleOpenModal}
       />
 
-      {/* 5. Today's Farmer Snapshot */}
+      {/* 5. Current Farmer Snapshot */}
       <FarmerSnapshot
         locale={locale}
         weather={PUBLIC_HOME_FIXTURE.weather}

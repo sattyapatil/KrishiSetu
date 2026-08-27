@@ -3,8 +3,8 @@ import type { PublicHomeViewModel } from './public-home.types.js';
 export const PUBLIC_HOME_FIXTURE: PublicHomeViewModel = {
   provenance: {
     mode: 'SYNTHETIC',
-    updatedAt: '2026-08-25T03:30:00.000Z',
-    displayUpdatedAt: '25 August 2026, 9:00 AM IST',
+    updatedAt: '2026-08-27T03:30:00.000Z',
+    displayUpdatedAt: '27 August 2026, 9:00 AM IST',
     labelKey: 'publicHome.common.syntheticDataLabel',
   },
   widgetStates: {
@@ -22,7 +22,7 @@ export const PUBLIC_HOME_FIXTURE: PublicHomeViewModel = {
     titleKey: 'publicHome.alert.title',
     fallbackTitle: 'Solar pump subsidy applications close on 31 August 2026',
     metaKey: 'publicHome.alert.meta',
-    fallbackMeta: 'Synthetic demo notice • Updated 25 August 2026',
+    fallbackMeta: 'Synthetic demo notice • Updated 27 August 2026',
     actionKey: 'publicHome.alert.viewNotice',
   },
   weather: {
@@ -44,7 +44,7 @@ export const PUBLIC_HOME_FIXTURE: PublicHomeViewModel = {
     title: 'Pause spraying during rain and inspect low-lying plots',
     summary:
       'Delay foliar spraying until a dry window. Check soybean and pigeon-pea plots for standing water and clear blocked drainage channels.',
-    validity: 'Valid through 26 August 2026',
+    validity: 'Valid through 31 August 2026',
     source: 'Synthetic agromet advisory',
     prototypeData: true,
   },

@@ -31,7 +31,7 @@ describe('KrishiSetu Complete Interaction Contract & Journey Verification', () =
     assert.equal(result.errorMessageKey, 'errors.identity.farmerNotFound');
   });
 
-  test('Dashboard Consent: grants required and optional scopes', async () => {
+  test('Dashboard Consent: grants the required journey scope bundle', async () => {
     const adapter = new InMemoryPrototypeJourneyAdapter();
     await adapter.startSession('27202600000001', '2468');
 

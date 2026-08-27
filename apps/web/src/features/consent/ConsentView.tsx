@@ -147,7 +147,7 @@ export function ConsentView({
             {t('consent.scopesTitle')}
           </h2>
           <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--ks-color-text-muted, #475569)' }}>
-            Review and select the agricultural registries you authorize KrishiSetu to access for pre-qualification.
+            {t('consent.scopesDescription')}
           </p>
         </div>
 
@@ -157,9 +157,9 @@ export function ConsentView({
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', paddingBottom: '0.5rem', borderBottom: '2px solid var(--ks-color-border, #cbd5e1)' }}>
               <span style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--ks-color-civic-blue, #1e3a8a)' }}>
-                Required Authorizations
+                {t('consent.coreRecordsTitle')}
               </span>
-              <StatusBadge status="ready" label="Mandatory for Dashboard" />
+              <StatusBadge status="ready" label={t('consent.requiredBadge')} />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -197,13 +197,13 @@ export function ConsentView({
             </div>
           </div>
 
-          {/* Optional Scopes Section */}
+          {/* Eligibility scopes are part of the same required journey bundle. */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', paddingBottom: '0.5rem', borderBottom: '1px solid var(--ks-color-border, #cbd5e1)' }}>
               <span style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--ks-color-text, #0f172a)' }}>
-                {t('consent.scopesTitle')}
+                {t('consent.eligibilityRecordsTitle')}
               </span>
-              <StatusBadge status="ready" label="Required" />
+              <StatusBadge status="ready" label={t('consent.requiredBadge')} />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
