@@ -10,7 +10,7 @@ import {
   PrototypeWithdrawalResult,
   PrototypeScenario,
 } from './types.js';
-import { defaultPrototypeAdapter } from './prototype-journey-adapter.js';
+import { defaultJourneyAdapter } from './journey-adapter-factory.js';
 import type { CompositeDashboardModel } from '@krishisetu/dashboard';
 
 interface JourneyContextValue {
@@ -42,7 +42,7 @@ const JourneyContext = createContext<JourneyContextValue | undefined>(undefined)
 
 export function JourneyProvider({
   children,
-  adapter = defaultPrototypeAdapter,
+  adapter = defaultJourneyAdapter,
 }: {
   children: React.ReactNode;
   adapter?: PrototypeJourneyAdapter;
