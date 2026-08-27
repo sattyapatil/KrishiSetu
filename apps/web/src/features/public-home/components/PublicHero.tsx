@@ -22,10 +22,17 @@ export function PublicHero({ locale }: PublicHeroProps): React.JSX.Element {
 
     const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const connection = (navigator as Navigator & {
-      connection?: { readonly saveData?: boolean };
+      connection?: {
+        readonly saveData?: boolean;
+        readonly effectiveType?: 'slow-2g' | '2g' | '3g' | '4g';
+      };
     }).connection;
+    const isSlowConnection =
+      connection?.effectiveType === 'slow-2g' ||
+      connection?.effectiveType === '2g' ||
+      connection?.effectiveType === '3g';
 
-    if (reducedMotionQuery.matches || connection?.saveData) {
+    if (reducedMotionQuery.matches || connection?.saveData || isSlowConnection) {
       video.pause();
       setIsPlaying(false);
       return;
@@ -81,6 +88,10 @@ export function PublicHero({ locale }: PublicHeroProps): React.JSX.Element {
             className={styles.heroPoster}
             src="/media/public-home/krishisetu-hero-poster.webp"
             alt=""
+            width={1280}
+            height={720}
+            decoding="async"
+            fetchPriority="high"
           />
         </picture>
 
@@ -90,7 +101,7 @@ export function PublicHero({ locale }: PublicHeroProps): React.JSX.Element {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/media/public-home/krishisetu-hero-poster.webp"
           onCanPlay={() => setIsMediaReady(true)}
           onPlaying={() => setIsPlaying(true)}
@@ -100,6 +111,11 @@ export function PublicHero({ locale }: PublicHeroProps): React.JSX.Element {
             setIsPlaying(false);
           }}
         >
+          <source
+            media="(max-width: 767px)"
+            src="/media/public-home/krishisetu-hero-mobile.mp4"
+            type="video/mp4"
+          />
           <source src="/media/public-home/krishisetu-hero-desktop.mp4" type="video/mp4" />
         </video>
 
