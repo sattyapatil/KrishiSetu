@@ -19,7 +19,7 @@ export function AccessRequiredView({ locale }: AccessRequiredViewProps): React.J
         subtitle={t('brand.name')}
         footerSlot={
           <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem' }}>
-            <Link href={`/${locale}`} style={{ textDecoration: 'none' }}>
+            <Link href={`/${locale}/login`} style={{ textDecoration: 'none' }}>
               <Button variant="primary" size="lg">
                 {t('common.startDemo')}
               </Button>

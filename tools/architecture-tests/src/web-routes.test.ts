@@ -14,7 +14,8 @@ describe('KrishiSetu Web Route Architecture Invariants', () => {
   const EXPECTED_ROUTES = [
     'page.tsx', // Root redirect
     '[locale]/layout.tsx', // Locale wrapper
-    '[locale]/page.tsx', // 1. Login
+    '[locale]/page.tsx', // 1. Public Landing Page
+    '[locale]/login/page.tsx', // 1b. Login
     '[locale]/consent/page.tsx', // 2. Dashboard consent
     '[locale]/dashboard/page.tsx', // 3. Dashboard
     '[locale]/schemes/page.tsx', // 4. Schemes catalog
@@ -33,7 +34,7 @@ describe('KrishiSetu Web Route Architecture Invariants', () => {
     '[locale]/privacy/withdrawal/[receiptId]/page.tsx', // 17. Withdrawal simulation receipt
   ];
 
-  test('all 17 required Next.js App Router route files exist explicitly', () => {
+  test('all 18 required Next.js App Router route files exist explicitly', () => {
     for (const routeRelPath of EXPECTED_ROUTES) {
       const fullPath = path.join(WEB_APP_DIR, routeRelPath);
       assert.ok(
@@ -68,6 +69,7 @@ describe('KrishiSetu Web Route Architecture Invariants', () => {
   test('all internal links in AppShell and Feature views target valid route patterns', () => {
     const VALID_ROUTE_PATTERNS = [
       /^\/(en|mr|hi|kn)$/,
+      /^\/(en|mr|hi|kn)\/login$/,
       /^\/(en|mr|hi|kn)\/consent$/,
       /^\/(en|mr|hi|kn)\/dashboard$/,
       /^\/(en|mr|hi|kn)\/schemes$/,
@@ -87,6 +89,9 @@ describe('KrishiSetu Web Route Architecture Invariants', () => {
     ];
 
     const sampleHrefs = [
+      '/en',
+      '/en/login',
+      '/mr/login',
       '/en/dashboard',
       '/mr/schemes',
       '/hi/schemes/offering_drip_2026',

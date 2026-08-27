@@ -19,6 +19,7 @@ export function LanguageSelector({
         display: 'inline-flex',
         alignItems: 'center',
         gap: '0.25rem',
+        position: 'relative',
       }}
     >
       <label htmlFor="ks-lang-select" className="sr-only" style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>
@@ -32,7 +33,7 @@ export function LanguageSelector({
         style={{
           minHeight: '2.75rem',
           minWidth: '7.5rem',
-          padding: '0.375rem 0.75rem',
+          padding: '0.375rem 2.5rem 0.375rem 0.75rem',
           borderRadius: '0.375rem',
           border: '1px solid var(--ks-color-border, #cbd5e1)',
           backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
@@ -41,6 +42,7 @@ export function LanguageSelector({
           fontWeight: 700,
           cursor: 'pointer',
           fontFamily: 'inherit',
+          appearance: 'none',
         }}
       >
         {SUPPORTED_LOCALES.map((loc) => {
@@ -52,6 +54,21 @@ export function LanguageSelector({
           );
         })}
       </select>
+      <span
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          right: '0.875rem',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          color: 'var(--ks-color-civic-blue, #1e3a8a)',
+          fontSize: '0.75rem',
+          lineHeight: 1,
+          pointerEvents: 'none',
+        }}
+      >
+        ▼
+      </span>
     </div>
   );
 }

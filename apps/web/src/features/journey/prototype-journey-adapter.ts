@@ -128,13 +128,19 @@ export class ApiPrototypeJourneyAdapter implements PrototypeJourneyAdapter {
       locale: 'en',
       noticeAcknowledged: true,
     });
-    this.dashboardSnapshot = await this.client.dashboard();
     this.currentSession = {
       ...this.currentSession,
       dashboardConsentGranted: true,
       dashboardConsentScopes: consent.scopes,
       activeConsentId: consent.consentId,
     };
+    try {
+      this.dashboardSnapshot = await this.client.dashboard();
+    } catch {
+      // Consent remains valid if initial dashboard composition is temporarily
+      // unavailable. DashboardView can safely render its deterministic fixture.
+      this.dashboardSnapshot = null;
+    }
     return {
       consentId: consent.consentId,
       farmerId: this.currentSession.farmerId,

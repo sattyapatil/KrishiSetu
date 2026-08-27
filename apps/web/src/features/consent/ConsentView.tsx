@@ -29,6 +29,7 @@ export function ConsentView({
     new Set(requiredDashboardScopes)
   );
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState(false);
 
   const toggleScope = (scopeKey: string) => {
     if (requiredDashboardScopes.includes(scopeKey as never)) {
@@ -46,11 +47,18 @@ export function ConsentView({
   };
 
   const handleGrant = async () => {
+    if (isSubmitting) return;
     setIsSubmitting(true);
+    setSubmissionError(false);
     const scopes = Array.from(selectedScopes);
-    await grantDashboardConsent(scopes);
-    setIsSubmitting(false);
-    onGrantConsent(scopes);
+    try {
+      await grantDashboardConsent(scopes);
+      onGrantConsent(scopes);
+    } catch {
+      setSubmissionError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -91,6 +99,17 @@ export function ConsentView({
       <Card
         footerSlot={
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {submissionError && (
+              <Alert variant="error" title={t('consent.grantErrorTitle')}>
+                <span>{t('consent.grantErrorDescription')} </span>
+                <Link
+                  href={`/${locale}/login`}
+                  style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline' }}
+                >
+                  {t('consent.signInAgain')}
+                </Link>
+              </Alert>
+            )}
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-end', alignItems: 'center' }}>
               <Button
                 variant="outline"

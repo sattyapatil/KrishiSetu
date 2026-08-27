@@ -63,36 +63,60 @@ export function Select({
         {required && <span aria-hidden="true" style={{ color: 'var(--ks-color-error, #dc2626)', marginLeft: '0.25rem' }}>*</span>}
       </label>
 
-      <select
-        id={id}
-        required={required}
-        aria-invalid={hasError ? 'true' : undefined}
-        aria-describedby={describedBy || undefined}
-        className={`ks-select ${hasError ? 'ks-select--error' : ''}`}
+      <div
         style={{
-          minHeight: '3rem',
-          padding: '0.625rem 0.875rem',
-          fontSize: '1rem',
-          lineHeight: '1.5rem',
-          color: 'var(--ks-color-text, #0f172a)',
-          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
-          borderWidth: '1px',
-          borderStyle: 'solid',
-          borderColor: hasError ? 'var(--ks-color-error, #dc2626)' : 'var(--ks-color-border, #cbd5e1)',
-          borderRadius: '0.5rem',
-          outline: 'none',
-          fontFamily: 'inherit',
-          cursor: 'pointer',
-          ...style,
+          position: 'relative',
+          width: fullWidth ? '100%' : 'auto',
         }}
-        {...props}
       >
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value} disabled={opt.disabled}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
+        <select
+          id={id}
+          required={required}
+          aria-invalid={hasError ? 'true' : undefined}
+          aria-describedby={describedBy || undefined}
+          className={`ks-select ${hasError ? 'ks-select--error' : ''}`}
+          style={{
+            minHeight: '3rem',
+            width: fullWidth ? '100%' : 'auto',
+            padding: '0.625rem 2.5rem 0.625rem 0.875rem',
+            fontSize: '1rem',
+            lineHeight: '1.5rem',
+            color: 'var(--ks-color-text, #0f172a)',
+            backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
+            borderWidth: '1px',
+            borderStyle: 'solid',
+            borderColor: hasError ? 'var(--ks-color-error, #dc2626)' : 'var(--ks-color-border, #cbd5e1)',
+            borderRadius: '0.5rem',
+            outline: 'none',
+            fontFamily: 'inherit',
+            cursor: 'pointer',
+            appearance: 'none',
+            ...style,
+          }}
+          {...props}
+        >
+          {options.map((opt) => (
+            <option key={opt.value} value={opt.value} disabled={opt.disabled}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+        <span
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            right: '0.875rem',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            color: 'var(--ks-color-text-muted, #475569)',
+            fontSize: '0.75rem',
+            lineHeight: 1,
+            pointerEvents: 'none',
+          }}
+        >
+          ▼
+        </span>
+      </div>
 
       {helperText && !hasError && (
         <span

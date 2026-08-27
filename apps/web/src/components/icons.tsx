@@ -17,6 +17,16 @@ export function DashboardIcon({ size = 20, className = '', 'aria-hidden': ariaHi
   );
 }
 
+export function HomeIcon({ size = 20, className = '', 'aria-hidden': ariaHidden = true }: IconProps): React.JSX.Element {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden={ariaHidden}>
+      <path d="M3 11 12 3l9 8" />
+      <path d="M5 10v10h14V10" />
+      <path d="M9 20v-6h6v6" />
+    </svg>
+  );
+}
+
 export function ApplicationsIcon({ size = 20, className = '', 'aria-hidden': ariaHidden = true }: IconProps): React.JSX.Element {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden={ariaHidden}>

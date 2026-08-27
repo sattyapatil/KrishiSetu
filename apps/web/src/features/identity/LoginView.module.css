@@ -1,0 +1,117 @@
+.loginPage {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginLayout {
+  width: 100%;
+  max-width: 68rem;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(25rem, 1.08fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+}
+
+.valuePanel,
+.formPanel {
+  min-height: 0;
+  border-radius: var(--ks-radius-lg, 0.75rem);
+  box-shadow: var(--ks-shadow-card, 0 1px 2px rgb(15 23 42 / 0.08));
+}
+
+.valuePanel {
+  padding: clamp(1.5rem, 3.5vh, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  color: var(--ks-color-surface-card, #ffffff);
+  background: radial-gradient(circle at 90% 10%, rgb(255 255 255 / 0.12), transparent 34%), var(--ks-color-civic-blue, #1e3a8a);
+}
+
+.panelEyebrow,
+.formEyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.panelEyebrow { color: var(--ks-color-civic-blue-light, #dbeafe); }
+.valueTitle { margin: 0; max-width: 28rem; font-size: clamp(1.65rem, 3vw, 2.25rem); line-height: 1.18; color: inherit; }
+.valueDescription { max-width: 32rem; margin: 0.75rem 0 0; font-size: 0.975rem; line-height: 1.55; color: rgb(255 255 255 / 0.88); }
+.benefitList { display: flex; flex-direction: column; gap: 0.9rem; margin: 0; padding: 0; list-style: none; }
+.benefitItem { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 0.75rem; align-items: flex-start; }
+.benefitIcon { width: 2.5rem; height: 2.5rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--ks-radius-md, 0.5rem); background-color: rgb(255 255 255 / 0.12); }
+.benefitItem strong,
+.benefitItem span span { display: block; }
+.benefitItem strong { margin-bottom: 0.15rem; font-size: 0.9375rem; line-height: 1.3; }
+.benefitItem span span { font-size: 0.8125rem; line-height: 1.4; color: rgb(255 255 255 / 0.8); }
+.valueFootnote { margin: 0; padding-top: 1rem; border-top: 1px solid rgb(255 255 255 / 0.2); font-size: 0.75rem; line-height: 1.4; color: rgb(255 255 255 / 0.76); }
+
+.formPanel {
+  padding: clamp(1.25rem, 3vh, 2rem);
+  display: flex;
+  align-items: center;
+  background-color: var(--ks-color-surface-card, #ffffff);
+  border: 1px solid var(--ks-color-border, #cbd5e1);
+}
+
+.formInner { width: 100%; max-width: 29rem; margin: 0 auto; }
+.prototypeNote { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); gap: 0.625rem; padding: 0.625rem 0.75rem; color: var(--ks-color-civic-blue-dark, #172554); background-color: var(--ks-color-civic-blue-light, #dbeafe); border: 1px solid var(--ks-color-info-border, #bfdbfe); border-radius: var(--ks-radius-md, 0.5rem); }
+.prototypeIcon { font-weight: 800; text-align: center; }
+.prototypeNote strong,
+.prototypeNote span span { display: block; }
+.prototypeNote strong { font-size: 0.8125rem; line-height: 1.25rem; }
+.prototypeNote span span { margin-top: 0.1rem; font-size: 0.75rem; line-height: 1.2rem; }
+.formHeader { margin: clamp(0.9rem, 2vh, 1.25rem) 0 1rem; }
+.formEyebrow { color: var(--ks-color-agri-green, #166534); }
+.formHeader h1 { margin: 0; font-size: clamp(1.5rem, 3vw, 1.875rem); line-height: 1.2; color: var(--ks-color-civic-blue, #1e3a8a); }
+.formHeader > p:last-child { margin: 0.4rem 0 0; font-size: 0.875rem; line-height: 1.45; color: var(--ks-color-text-muted, #475569); }
+.loginForm { display: flex; flex-direction: column; gap: 0.75rem; }
+.loginForm :global(.ks-form-group) { margin-bottom: 0 !important; gap: 0.25rem !important; }
+.loginForm :global(.ks-helper-text),
+.loginForm :global(.ks-error-text) { line-height: 1rem !important; }
+.backLink { display: block; width: fit-content; margin: 0.875rem auto 0; color: var(--ks-color-civic-blue, #1e3a8a); font-size: 0.8125rem; font-weight: 700; text-decoration: none; }
+.backLink:hover { text-decoration: underline; }
+.backLink:focus-visible { outline: 3px solid var(--ks-color-focus, #0f172a); outline-offset: 3px; border-radius: var(--ks-radius-sm, 0.25rem); }
+
+@media (max-width: 767px) {
+  .loginLayout { display: block; max-width: 31rem; }
+  .valuePanel { display: none; }
+  .formPanel { max-height: 100%; padding: clamp(0.85rem, 2.5vh, 1.25rem); }
+  .formHeader { margin: 0.75rem 0; }
+  .loginForm { gap: 0.625rem; }
+}
+
+@media (max-width: 479px) {
+  .formPanel { border-radius: var(--ks-radius-md, 0.5rem); }
+  .prototypeNote span span { display: none; }
+  .formHeader > p:last-child { font-size: 0.8125rem; }
+  .loginForm :global(.ks-helper-text) { font-size: 0.6875rem !important; }
+}
+
+@media (max-height: 700px) {
+  .prototypeNote { display: none; }
+  .formPanel { padding-block: 0.875rem; }
+  .formHeader { margin: 0 0 0.625rem; }
+  .valuePanel { padding-block: 1.25rem; gap: 0.75rem; }
+  .benefitList { gap: 0.5rem; }
+  .valueFootnote { display: none; }
+  .backLink { margin-top: 0.625rem; }
+}
+
+@media (max-height: 600px) and (max-width: 767px) {
+  .formPanel { padding: 0.5rem 0.75rem; }
+  .formHeader > p:last-child,
+  .loginForm :global(.ks-helper-text),
+  .backLink { display: none; }
+  .loginForm { gap: 0.4rem; }
+}

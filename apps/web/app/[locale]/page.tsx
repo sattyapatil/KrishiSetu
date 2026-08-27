@@ -1,12 +1,11 @@
 'use client';
 
 import React, { use } from 'react';
-import { useRouter } from 'next/navigation';
 import { Locale, isSupportedLocale } from '@krishisetu/i18n';
 import { notFound } from 'next/navigation';
-import { LoginView } from '../../src/features/identity/LoginView.js';
+import { PublicHomeView } from '../../src/features/public-home/index.js';
 
-export default function LocaleStartPage({
+export default function LocaleLandingPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -19,11 +18,6 @@ export default function LocaleStartPage({
   }
 
   const locale = rawLocale as Locale;
-  const router = useRouter();
 
-  const handleLoginSuccess = (_farmerId: string) => {
-    router.push(`/${locale}/consent`);
-  };
-
-  return <LoginView locale={locale} onLoginSuccess={handleLoginSuccess} />;
+  return <PublicHomeView locale={locale} />;
 }

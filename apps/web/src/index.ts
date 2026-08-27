@@ -11,3 +11,4 @@ export * from './features/applications/index.js';
 export * from './features/privacy/index.js';
 export * from './features/notifications/index.js';
 export * from './features/weather-advisory/index.js';
+export * from './features/public-home/index.js';

@@ -4,10 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Locale, translate } from '@krishisetu/i18n';
-import { LanguageSelector, PrototypeNotice, BrandMark } from '@krishisetu/design-system';
+import { LanguageSelector, BrandMark } from '@krishisetu/design-system';
 import { useJourney } from '../features/journey/index.js';
 import {
   DashboardIcon,
+  HomeIcon,
   SchemesIcon,
   ApplicationsIcon,
   NoticesIcon,
@@ -48,8 +49,12 @@ export function AppShell({
   };
 
   const isAuthenticated = Boolean(session && session.dashboardConsentGranted);
+  const isLandingMode = pathname === `/${locale}` || pathname === `/${locale}/`;
+  const isLoginScreen =
+    pathname === `/${locale}/login` || pathname.endsWith('/login');
   const isAuthOrConsentScreen =
-    pathname === `/${locale}` ||
+    isLandingMode ||
+    pathname === `/${locale}/login` ||
     pathname === `/${locale}/consent` ||
     pathname.endsWith('/login') ||
     pathname.endsWith('/consent');
@@ -63,6 +68,13 @@ export function AppShell({
       href: `/${locale}/dashboard`,
       icon: DashboardIcon,
       isActive: pathname.startsWith(`/${locale}/dashboard`),
+    },
+    {
+      id: 'public-home',
+      label: t('navigation.publicHome'),
+      href: `/${locale}`,
+      icon: HomeIcon,
+      isActive: false,
     },
     {
       id: 'schemes',
@@ -106,6 +118,8 @@ export function AppShell({
       className="ks-app-shell"
       style={{
         minHeight: '100vh',
+        height: isLoginScreen ? '100svh' : undefined,
+        overflow: isLoginScreen ? 'hidden' : undefined,
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: 'var(--ks-color-surface-page, #f8fafc)',
@@ -133,6 +147,7 @@ export function AppShell({
           flex: 1;
           width: 100%;
           position: relative;
+          min-height: 0;
         }
 
         .ks-sidebar {
@@ -154,6 +169,19 @@ export function AppShell({
           max-width: var(--ks-content-max, 75rem);
           margin: 0 auto;
           padding: 2rem 2rem 3rem 2rem;
+        }
+
+        .ks-main-content.is-landing {
+          max-width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .ks-main-content.is-login {
+          max-width: 100%;
+          min-height: 0;
+          overflow: hidden;
+          padding: clamp(0.75rem, 2.5vh, 1.5rem) 2rem;
         }
 
         .ks-mobile-bottom-nav {
@@ -197,6 +225,14 @@ export function AppShell({
             padding: 1.25rem 1rem 5rem 1rem; /* Reserved bottom padding for sticky bar */
           }
 
+          .ks-main-content.is-landing {
+            padding: 0;
+          }
+
+          .ks-main-content.is-login {
+            padding: clamp(0.5rem, 1.75vh, 0.875rem) 1rem;
+          }
+
           .ks-mobile-bottom-nav {
             position: fixed;
             bottom: 0;
@@ -220,7 +256,7 @@ export function AppShell({
             align-items: center;
             justify-content: center;
             min-width: 0;
-            width: 25%;
+            width: 20%;
             min-height: 3.5rem;
             padding: 0.25rem;
             text-decoration: none;
@@ -267,92 +303,91 @@ export function AppShell({
         }
       `}} />
 
-      {/* 1. Persistent Compact Prototype Disclosure */}
-      <PrototypeNotice message={t('brand.prototypeDisclosure')} />
+      {/* 1. Standardized Top Header (rendered when not in landing mode, since landing mode provides PublicHeader) */}
+      {!isLandingMode && (
+        <header
+          className="ks-header"
+          style={{
+            backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
+            borderBottom: '1px solid var(--ks-color-border, #cbd5e1)',
+            width: '100%',
+            position: 'sticky',
+            top: 0,
+            zIndex: 1000,
+          }}
+        >
+          <div className="ks-header-inner">
+            {/* Brand Logo and Title */}
+            <Link
+              href={homeHref}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+              aria-label={`${t('brand.name')} - ${t('brand.motto')}`}
+            >
+              <BrandMark size={42} />
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span
+                  style={{
+                    fontSize: '1.25rem',
+                    fontWeight: 700,
+                    color: 'var(--ks-color-civic-blue, #1e3a8a)',
+                    lineHeight: 1.1,
+                  }}
+                >
+                  {t('brand.name')}
+                </span>
+                <span
+                  style={{
+                    fontSize: '0.75rem',
+                    color: 'var(--ks-color-agri-green, #166534)',
+                    fontWeight: 600,
+                    letterSpacing: '0.02em',
+                  }}
+                >
+                  {t('brand.motto')}
+                </span>
+              </div>
+            </Link>
 
-      {/* 2. Standardized Top Header */}
-      <header
-        className="ks-header"
-        style={{
-          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
-          borderBottom: '1px solid var(--ks-color-border, #cbd5e1)',
-          width: '100%',
-          position: 'sticky',
-          top: 0,
-          zIndex: 1000,
-        }}
-      >
-        <div className="ks-header-inner">
-          {/* Brand Logo and Title */}
-          <Link
-            href={homeHref}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            aria-label={`${t('brand.name')} - ${t('brand.motto')}`}
-          >
-            <BrandMark size={42} />
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span
-                style={{
-                  fontSize: '1.25rem',
-                  fontWeight: 700,
-                  color: 'var(--ks-color-civic-blue, #1e3a8a)',
-                  lineHeight: 1.1,
-                }}
-              >
-                {t('brand.name')}
-              </span>
-              <span
-                style={{
-                  fontSize: '0.75rem',
-                  color: 'var(--ks-color-agri-green, #166534)',
-                  fontWeight: 600,
-                  letterSpacing: '0.02em',
-                }}
-              >
-                {t('brand.motto')}
-              </span>
+            {/* Header Actions (Language, Profile/Logout) */}
+            <div className="ks-header-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <LanguageSelector currentLocale={locale} onSelectLocale={handleSelectLocale} />
+
+              {isAuthenticated && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    logout();
+                    router.push(`/${locale}`);
+                  }}
+                  aria-label={t('navigation.logout')}
+                  style={{
+                    minHeight: '2.75rem',
+                    padding: '0.375rem 0.875rem',
+                    fontSize: '0.875rem',
+                    fontWeight: 600,
+                    border: '1px solid var(--ks-color-border, #cbd5e1)',
+                    borderRadius: '0.5rem',
+                    backgroundColor: 'var(--ks-color-surface-page, #f8fafc)',
+                    color: 'var(--ks-color-text, #0f172a)',
+                    cursor: 'pointer',
+                    transition: 'background-color 0.2s',
+                  }}
+                >
+                  {t('navigation.logout')}
+                </button>
+              )}
             </div>
-          </Link>
-
-          {/* Header Actions (Language, Profile/Logout) */}
-          <div className="ks-header-actions" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <LanguageSelector currentLocale={locale} onSelectLocale={handleSelectLocale} />
-
-            {isAuthenticated && (
-              <button
-                type="button"
-                onClick={() => {
-                  logout();
-                  router.push(`/${locale}`);
-                }}
-                aria-label={t('navigation.logout')}
-                style={{
-                  minHeight: '2.75rem',
-                  padding: '0.375rem 0.875rem',
-                  fontSize: '0.875rem',
-                  fontWeight: 600,
-                  border: '1px solid var(--ks-color-border, #cbd5e1)',
-                  borderRadius: '0.5rem',
-                  backgroundColor: 'var(--ks-color-surface-page, #f8fafc)',
-                  color: 'var(--ks-color-text, #0f172a)',
-                  cursor: 'pointer',
-                  transition: 'background-color 0.2s',
-                }}
-              >
-                {t('navigation.logout')}
-              </button>
-            )}
           </div>
-        </div>
-      </header>
+        </header>
+      )}
 
-      {/* 3. Layout Wrapper for Sidebar + Main Content */}
+      {/* 2. Layout Wrapper for Sidebar + Main Content */}
       <div className="ks-layout-wrapper">
 
         {/* Left Sidebar (Desktop Only) */}
@@ -376,18 +411,21 @@ export function AppShell({
         )}
 
         {/* Main Content Container */}
-        <main id="main-content" className="ks-main-content">
+        <main
+          id="main-content"
+          className={`ks-main-content ${isLandingMode ? 'is-landing' : ''} ${isLoginScreen ? 'is-login' : ''}`}
+        >
           {children}
         </main>
       </div>
 
-      {/* 4. Mobile Bottom Navigation (Visible only on mobile for authenticated users) */}
+      {/* 3. Mobile Bottom Navigation (Visible only on mobile for authenticated users) */}
       {isAuthenticated && !isAuthOrConsentScreen && (
         <nav
           aria-label="Mobile Bottom Navigation"
           className="ks-mobile-bottom-nav"
         >
-          {navLinks.slice(0, 4).map((link) => {
+          {navLinks.slice(0, 5).map((link) => {
             const Icon = link.icon;
             return (
               <Link
@@ -404,23 +442,25 @@ export function AppShell({
         </nav>
       )}
 
-      {/* 5. Accessible Footer */}
-      <footer
-        style={{
-          padding: '1.5rem 1rem',
-          backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
-          borderTop: '1px solid var(--ks-color-border, #cbd5e1)',
-          textAlign: 'center',
-          fontSize: '0.875rem',
-          color: 'var(--ks-color-text-muted, #475569)',
-          zIndex: 10,
-        }}
-      >
-        <p style={{ margin: '0 0 0.25rem 0' }}>{t('brand.prototypeDisclosure')}</p>
-        <p style={{ margin: 0 }}>
-          <strong>{t('brand.name')}</strong> • {t('brand.mottoMeaning')}
-        </p>
-      </footer>
+      {/* 4. Accessible Footer (rendered when not in landing mode, since landing mode provides PublicFooter) */}
+      {!isLandingMode && !isLoginScreen && (
+        <footer
+          style={{
+            padding: '1.5rem 1rem',
+            backgroundColor: 'var(--ks-color-surface-card, #ffffff)',
+            borderTop: '1px solid var(--ks-color-border, #cbd5e1)',
+            textAlign: 'center',
+            fontSize: '0.875rem',
+            color: 'var(--ks-color-text-muted, #475569)',
+            zIndex: 10,
+          }}
+        >
+          <p style={{ margin: '0 0 0.25rem 0' }}>{t('brand.prototypeDisclosure')}</p>
+          <p style={{ margin: 0 }}>
+            <strong>{t('brand.name')}</strong> • {t('brand.mottoMeaning')}
+          </p>
+        </footer>
+      )}
     </div>
   );
 }
