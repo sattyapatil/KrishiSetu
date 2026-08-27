@@ -79,7 +79,7 @@ export function StickyApplicationBar({ locale }: StickyApplicationBarProps): Rea
             <CloseIcon size={18} aria-hidden={true} />
           </button>
           <Link
-            href={`/${locale}/applications/new/review`}
+            href={`/${locale}/schemes/eligibility`}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -95,7 +95,7 @@ export function StickyApplicationBar({ locale }: StickyApplicationBarProps): Rea
               boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
             }}
           >
-            <span>{t('schemes.reviewAndApply', { count })}</span>
+            <span>{t('schemes.checkEligibility')}</span>
             <ArrowRightIcon size={18} aria-hidden={true} />
           </Link>
         </div>

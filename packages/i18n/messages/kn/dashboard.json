@@ -20,5 +20,19 @@
   "quickActionsSubtitle": "ಕೃತಕ ಭೂ ಸಾರಾಂಶ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ಅಥವಾ ನಿಯಮಿತ ಕೆಲಸ ಮುಂದುವರಿಸಿ",
   "viewApplications": "ಅರ್ಜಿಗಳನ್ನು ನೋಡಿ",
   "browseSchemes": "ಯೋಜನೆಗಳನ್ನು ನೋಡಿ",
-  "generatedAt": "ಡೇಟಾ ನವೀಕರಣ"
+  "generatedAt": "ಡೇಟಾ ನವೀಕರಣ",
+  "todayEyebrow": "ಇಂದಿನ ಸಂಕ್ಷಿಪ್ತ ನೋಟ",
+  "dailyOverview": "ಹವಾಮಾನ ಮತ್ತು ಮಾರುಕಟ್ಟೆ ಸ್ಥಿತಿ",
+  "weatherNow": "ಈಗಿನ ಹವಾಮಾನ",
+  "live": "ಲೈವ್",
+  "openWeather": "ವಿವರವಾದ ಮುನ್ಸೂಚನೆ ನೋಡಿ",
+  "marketSnapshot": "ಮಾರುಕಟ್ಟೆ ಸಾರಾಂಶ",
+  "puneMandi": "ಪುಣೆ ಮಾರುಕಟ್ಟೆ",
+  "today": "ಇಂದು",
+  "commoditiesTracked": "ಬೆಳೆ ದರಗಳು",
+  "openMarket": "ಮಾರುಕಟ್ಟೆ ವಿವರ ನೋಡಿ",
+  "servicesLauncherTitle": "ರೈತ ಸೇವಾ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು",
+  "servicesLauncherSubtitle": "ಅಗತ್ಯವಿದ್ದಾಗ ಮಾತ್ರ ಸಾಧನಗಳನ್ನು ತೆರೆಯಿರಿ",
+  "showServices": "ಸೇವೆಗಳನ್ನು ತೋರಿಸಿ",
+  "hideServices": "ಸೇವೆಗಳನ್ನು ಮರೆಮಾಡಿ"
 }

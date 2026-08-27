@@ -16,6 +16,7 @@ import { consentPurposes } from '@krishisetu/policy';
 import { ArrowLeftIcon, ArrowRightIcon, CheckIcon } from '../../components/icons.js';
 import { useJourney } from '../journey/index.js';
 import { getSchemeById, type SchemeDetailItem } from '../schemes/fixtures.js';
+import { evaluateSchemeEligibility } from '../schemes/eligibility.js';
 import { getDashboardViewModel } from '../dashboard/fixtures/dashboard-fixture.js';
 import { mapDashboardApiToViewModel } from '../dashboard/dashboard-api-mapper.js';
 import { downloadSyntheticSevenTwelve } from '../land-records/download-synthetic-seven-twelve.js';
@@ -135,6 +136,10 @@ export function ApplicationReviewView({ locale }: ApplicationReviewViewProps): R
 
   const localizeDataKey = (value: string) => (value.includes('.') ? t(value) : value);
 
+  const invalidSelection = selectedList
+    .map((scheme) => ({ scheme, decision: evaluateSchemeEligibility(scheme, viewModel, dashboardSnapshot) }))
+    .find(({ decision }) => !decision.eligible);
+
   const updateDraft = (patch: Partial<ApplicationDraft>) => {
     setDraft((current) => ({ ...current, ...patch }));
     setErrorKey(null);
@@ -203,6 +208,11 @@ export function ApplicationReviewView({ locale }: ApplicationReviewViewProps): R
   };
 
   const handleSubmit = async () => {
+    if (invalidSelection) {
+      setErrorKey(invalidSelection.decision.reasonKey ?? 'schemes.providerEligibilityRequirementNotMet');
+      window.setTimeout(() => errorRef.current?.focus(), 0);
+      return;
+    }
     if (!reviewed || !dispatchAllowed || !prototypeAcknowledged) {
       setErrorKey('applications.reviewValidationError');
       window.setTimeout(() => errorRef.current?.focus(), 0);
@@ -514,9 +524,18 @@ export function ApplicationReviewView({ locale }: ApplicationReviewViewProps): R
             </h2>
             <p className={styles.panelDescription}>{t('applications.reviewStepDescription')}</p>
 
+            {invalidSelection && !errorKey && (
+              <div className={styles.errorSummary} role="alert">
+                <strong>{t('schemes.eligibilityChangedTitle')}</strong>
+                <p style={{ marginBottom: 0 }}>
+                  {t(invalidSelection.decision.reasonKey ?? 'schemes.providerEligibilityRequirementNotMet')}
+                </p>
+              </div>
+            )}
+
             {errorKey && (
               <div className={styles.errorSummary} role="alert" tabIndex={-1} ref={errorRef}>
-                <strong>{t('applications.reviewErrorTitle')}</strong>
+                <strong>{t(errorKey.startsWith('schemes.') ? 'schemes.eligibilityChangedTitle' : 'applications.reviewErrorTitle')}</strong>
                 <p style={{ marginBottom: 0 }}>{t(errorKey)}</p>
               </div>
             )}
@@ -623,6 +642,7 @@ export function ApplicationReviewView({ locale }: ApplicationReviewViewProps): R
               variant="primary"
               size="lg"
               isLoading={submitting}
+              disabled={Boolean(invalidSelection)}
               loadingText={t('applications.submissionInProgress')}
               onClick={() => void handleSubmit()}
             >

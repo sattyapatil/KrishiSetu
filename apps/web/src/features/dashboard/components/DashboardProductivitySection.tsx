@@ -24,6 +24,7 @@ export function DashboardProductivitySection({
   locale,
   viewModel,
 }: DashboardProductivitySectionProps): React.JSX.Element {
+  const [servicesOpen, setServicesOpen] = React.useState(false);
   const t = (key: string, params?: Record<string, string | number>) =>
     translate(key, locale, params);
   const { adapter } = useJourney();
@@ -110,10 +111,23 @@ export function DashboardProductivitySection({
 
       <div className={styles.actionsCard}>
         <div>
-          <h3 className={styles.actionsTitle}>{t('dashboard.quickActionsTitle')}</h3>
-          <p className={styles.subtitle}>{t('dashboard.quickActionsSubtitle')}</p>
+          <h3 className={styles.actionsTitle}>{t('dashboard.servicesLauncherTitle')}</h3>
+          <p className={styles.subtitle}>{t('dashboard.servicesLauncherSubtitle')}</p>
         </div>
-        <div className={styles.actions}>
+        <button
+          type="button"
+          className={styles.launcherButton}
+          aria-expanded={servicesOpen}
+          aria-controls="farmer-service-shortcuts"
+          onClick={() => setServicesOpen((current) => !current)}
+        >
+          {servicesOpen ? t('dashboard.hideServices') : t('dashboard.showServices')}
+          <span aria-hidden="true">{servicesOpen ? '−' : '+'}</span>
+        </button>
+      </div>
+
+      {servicesOpen && (
+        <div id="farmer-service-shortcuts" className={styles.actions}>
           <button type="button" className={styles.downloadButton} onClick={handleDownload}>
             {t('land.downloadSyntheticExtract')}
           </button>
@@ -126,7 +140,7 @@ export function DashboardProductivitySection({
             {t('dashboard.browseSchemes')}
           </Link>
         </div>
-      </div>
+      )}
     </section>
   );
 }

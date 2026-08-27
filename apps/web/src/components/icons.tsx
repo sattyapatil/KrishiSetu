@@ -78,6 +78,15 @@ export function WeatherIcon({ size = 20, className = '', 'aria-hidden': ariaHidd
   );
 }
 
+export function MarketIcon({ size = 20, className = '', 'aria-hidden': ariaHidden = true }: IconProps): React.JSX.Element {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden={ariaHidden}>
+      <path d="M4 19V9" /><path d="M10 19V5" /><path d="M16 19v-7" /><path d="M22 19H2" />
+      <path d="m3 7 6-4 6 5 6-4" /><path d="m18 4 3 .1-.4 3" />
+    </svg>
+  );
+}
+
 export function CheckIcon({ size = 20, className = '', 'aria-hidden': ariaHidden = true }: IconProps): React.JSX.Element {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden={ariaHidden}>

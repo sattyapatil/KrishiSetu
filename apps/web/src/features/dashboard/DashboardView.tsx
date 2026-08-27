@@ -8,11 +8,12 @@ import { DashboardHeaderSection } from './components/DashboardHeaderSection.js';
 import { DashboardAttentionSection } from './components/DashboardAttentionSection.js';
 import { DashboardApplicationsSection } from './components/DashboardApplicationsSection.js';
 import { DashboardReadinessSection } from './components/DashboardReadinessSection.js';
-import { DashboardWeatherSection } from './components/DashboardWeatherSection.js';
 import { DashboardNoticesSection } from './components/DashboardNoticesSection.js';
 import { DashboardTechnicalSection } from './components/DashboardTechnicalSection.js';
 import { StickyApplicationBar } from './components/StickyApplicationBar.js';
 import { DashboardProductivitySection } from './components/DashboardProductivitySection.js';
+import { DashboardOverviewTiles } from './components/DashboardOverviewTiles.js';
+import styles from './DashboardView.module.css';
 
 export interface DashboardViewProps {
   readonly locale: Locale;
@@ -29,57 +30,43 @@ export function DashboardView({
   const activeNotices = vm.notices.filter((n) => n.status === 'ACTIVE');
 
   return (
-    <div
-      className="ks-dashboard-container"
-      style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
-    >
-      {/* 1. Farmer Identity & Notification Header */}
+    <div className={`${styles.dashboard} ks-dashboard-container`}>
       <DashboardHeaderSection
         locale={locale}
         farmer={vm.farmer}
         noticeCount={activeNotices.length}
       />
 
+      <DashboardOverviewTiles locale={locale} weather={vm.weather} />
+
       <DashboardProductivitySection locale={locale} viewModel={vm} />
 
-      {/* 2. Urgent Attention Items */}
       <DashboardAttentionSection
         locale={locale}
         actionItems={vm.actionItems}
       />
 
-      {/* 3. Continue or Start Application (Subsidies & Credit) */}
       <DashboardApplicationsSection
         locale={locale}
         schemes={vm.schemes}
         credit={vm.credit}
       />
 
-      {/* 4. Agricultural Readiness Summary (Land, Crops, Bank) */}
       <DashboardReadinessSection
         locale={locale}
         farmer={vm.farmer}
       />
 
-      {/* 5. District Weather and Agromet Advisory */}
-      <DashboardWeatherSection
-        locale={locale}
-        weather={vm.weather}
-      />
-
-      {/* 6. Public Notices & Advisories */}
       <DashboardNoticesSection
         locale={locale}
         notices={vm.notices}
       />
 
-      {/* 7. Collapsed Technical Trace */}
       <DashboardTechnicalSection
         locale={locale}
         technicalDetails={vm.technicalDetails}
       />
 
-      {/* 8. Sticky Action Bar when selections exist */}
       <StickyApplicationBar locale={locale} />
     </div>
   );

@@ -20,5 +20,19 @@
   "quickActionsSubtitle": "कृत्रिम जमीन सारांश डाउनलोड करा किंवा नियमित कामे पुढे चालू ठेवा",
   "viewApplications": "अर्ज पहा",
   "browseSchemes": "योजना पहा",
-  "generatedAt": "डेटा अद्ययावत"
+  "generatedAt": "डेटा अद्ययावत",
+  "todayEyebrow": "आजचा थोडक्यात आढावा",
+  "dailyOverview": "हवामान आणि बाजाराचा कल",
+  "weatherNow": "सध्याचे हवामान",
+  "live": "थेट",
+  "openWeather": "सविस्तर अंदाज पहा",
+  "marketSnapshot": "बाजार आढावा",
+  "puneMandi": "पुणे बाजार",
+  "today": "आज",
+  "commoditiesTracked": "पिकांचे दर",
+  "openMarket": "बाजार तपशील पहा",
+  "servicesLauncherTitle": "शेतकरी सेवा शॉर्टकट",
+  "servicesLauncherSubtitle": "गरज असेल तेव्हाच साधने उघडा",
+  "showServices": "सेवा दाखवा",
+  "hideServices": "सेवा लपवा"
 }

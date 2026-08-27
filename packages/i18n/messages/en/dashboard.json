@@ -20,5 +20,19 @@
   "quickActionsSubtitle": "Download a synthetic land summary or continue with your regular tasks",
   "viewApplications": "View applications",
   "browseSchemes": "Browse schemes",
-  "generatedAt": "Data updated"
+  "generatedAt": "Data updated",
+  "todayEyebrow": "Your day at a glance",
+  "dailyOverview": "Weather & market pulse",
+  "weatherNow": "Weather now",
+  "live": "Live",
+  "openWeather": "Open detailed forecast",
+  "marketSnapshot": "Market snapshot",
+  "puneMandi": "Pune mandi",
+  "today": "today",
+  "commoditiesTracked": "crops tracked",
+  "openMarket": "Open market details",
+  "servicesLauncherTitle": "Farmer service shortcuts",
+  "servicesLauncherSubtitle": "Open tools only when you need them",
+  "showServices": "Show services",
+  "hideServices": "Hide services"
 }

@@ -39,6 +39,12 @@
   border-radius: var(--ks-radius-lg);
   background: var(--ks-color-surface-card);
   box-shadow: var(--ks-shadow-card);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.metric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(24, 52, 38, 0.09);
 }
 
 .metricLabel {
@@ -64,7 +70,7 @@
   padding: var(--ks-space-4);
   border: var(--ks-border-width) solid var(--ks-color-border);
   border-radius: var(--ks-radius-lg);
-  background: var(--ks-color-civic-blue-light);
+  background: linear-gradient(120deg, var(--ks-color-service-start, #f5faf7), var(--ks-color-service-end, #edf5ff));
 }
 
 .actionsTitle {
@@ -78,8 +84,35 @@
   display: flex;
   gap: var(--ks-space-2);
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  padding: var(--ks-space-3);
+  border: var(--ks-border-width) solid var(--ks-color-border);
+  border-radius: var(--ks-radius-lg);
+  background: var(--ks-color-surface-card);
+  animation: revealServices 160ms ease-out;
 }
+
+.launcherButton {
+  min-height: var(--ks-touch-comfortable);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .55rem .9rem;
+  border: 1px solid rgba(23, 89, 58, .25);
+  border-radius: 999px;
+  background: var(--ks-color-surface-card, #fff);
+  color: var(--ks-color-service-action, #155d3b);
+  font: inherit;
+  font-size: .875rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.launcherButton span { font-size: 1.2rem; line-height: 1; }
+.launcherButton:focus-visible { outline: var(--ks-focus-outline); outline-offset: var(--ks-focus-offset); }
+
+@keyframes revealServices { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
 .action,
 .downloadButton {
