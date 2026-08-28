@@ -1315,6 +1315,14 @@
     gap: 0.5rem;
   }
 
+  /* The selector wrapper fills the grid column; make its native control do
+   * the same so the absolutely positioned chevron remains within its border. */
+  .headerActions :global(.ks-language-selector),
+  .headerActions :global(.ks-language-selector select) {
+    width: 100%;
+    min-width: 0;
+  }
+
   .heroContentWrapper {
     padding-bottom: 7rem;
   }
